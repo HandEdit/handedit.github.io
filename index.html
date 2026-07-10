@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="color-scheme" content="light" />
+  <title>HandEdit — A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="HandEdit home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span>HandEdit</span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#demos">Demos</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#leaderboard">Results</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell">
+      <div class="venue-pill">NeurIPS 2026 Submission · Anonymous Review Mode</div>
+      <h1><span class="title-accent">HandEdit</span>: A Unified Benchmark for Egocentric<br />Human-to-Robot Dexterous Hand Image Editing</h1>
+      <p class="hero-lead">
+        A large-scale embodiment-aware image-editing dataset and benchmark for transforming egocentric human hand and arm manipulation frames into diverse dexterous robotic embodiments.
+      </p>
+
+      <div class="authors" aria-label="Authors">
+        <strong>Anonymous Author(s)</strong>
+        <span>Anonymous Affiliation</span>
+      </div>
+
+      <div class="resource-row" aria-label="Project resources">
+        <a class="resource-btn" href="#paper-note"><span class="btn-icon">▤</span> Paper</a>
+        <a class="resource-btn" href="https://anonymous.4open.science/r/HandEdit/README.md" target="_blank" rel="noreferrer"><span class="btn-icon">⌘</span> Anonymous Code</a>
+        <a class="resource-btn" href="#dataset"><span class="btn-icon">◫</span> Dataset</a>
+        <a class="resource-btn" href="#leaderboard"><span class="btn-icon">↗</span> Benchmark Results</a>
+      </div>
+
+      <div class="stat-grid" aria-label="Headline benchmark statistics">
+        <article class="stat-card"><strong>200M+</strong><span>editing instances</span></article>
+        <article class="stat-card"><strong>300K+</strong><span>source clips</span></article>
+        <article class="stat-card"><strong>26</strong><span>target embodiments</span></article>
+        <article class="stat-card"><strong>600+</strong><span>scenes</span></article>
+        <article class="stat-card"><strong>1.1K+</strong><span>objects</span></article>
+        <article class="stat-card"><strong>400+</strong><span>tasks</span></article>
+      </div>
+
+      <figure class="hero-figure paper-figure">
+        <button class="figure-button" type="button" data-lightbox="assets/img/figures/handedit-overview.jpg" aria-label="Open HandEdit overview figure">
+          <img src="assets/img/figures/handedit-overview.jpg" alt="HandEdit overview showing datasets, source-to-robot editing examples, embodiment coverage, and representative editors" />
+        </button>
+        <figcaption>HandEdit unifies large-scale egocentric sources, 26 URDF-specified target embodiments, and representative commercial and open-source editors.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section shell" id="overview">
+      <div class="section-kicker">Overview</div>
+      <h2>Embodiment-aware editing, not generic style transfer</h2>
+      <div class="abstract-grid">
+        <p>
+          Egocentric human videos are abundant and diverse, but human and robot hands differ in appearance, geometry, articulation, kinematics, and viewpoint. A useful robot-centric edit must preserve the scene, object state, task semantics, and hand-object contact while instantiating the requested robotic morphology.
+        </p>
+        <p>
+          HandEdit addresses this missing evaluation problem with a unified dataset and benchmark spanning <strong>Hand-only</strong> and <strong>Hand-Arm</strong> tracks. The evaluation suite combines generic similarity, VLM-based judgment, and embodiment-aware metrics for removal, target fidelity, and interaction consistency.
+        </p>
+      </div>
+
+      <div class="claim-grid">
+        <article class="claim-card"><span>Data</span><h3>200M+ embodiment-aware edits</h3><p>Five public egocentric sources paired with diverse target robot configurations.</p></article>
+        <article class="claim-card"><span>Benchmark</span><h3>Two robotic replacement tracks</h3><p>Hand-only and Hand-Arm evaluation under URDF-conditioned editing.</p></article>
+        <article class="claim-card"><span>Evaluation</span><h3>Beyond perceptual realism</h3><p>Measure whether the requested robot is correct and the original interaction is preserved.</p></article>
+        <article class="claim-card"><span>Baselines</span><h3>11 representative editors</h3><p>Commercial APIs and open-source editors evaluated under native conditioning interfaces.</p></article>
+      </div>
+    </section>
+
+    <section class="section demo-band" id="demos">
+      <div class="shell">
+        <div class="section-kicker">Interactive demos</div>
+        <div class="demo-heading">
+          <div>
+            <h2>Human interaction on the left. Retargeted robot embodiment on the right.</h2>
+            <p class="section-intro">Each bordered card is a paired video slot. Replace the prepared MP4 files with your own dataset clips and retargeted robot or robot-arm videos; the layout, looping, mobile behavior, and posters are already wired.</p>
+          </div>
+          <div class="filter-controls" role="tablist" aria-label="Demo scope">
+            <button class="filter-btn active" type="button" data-demo-filter="all" aria-selected="true">All</button>
+            <button class="filter-btn" type="button" data-demo-filter="hand-only" aria-selected="false">Hand-only</button>
+            <button class="filter-btn" type="button" data-demo-filter="hand-arm" aria-selected="false">Hand-Arm</button>
+          </div>
+        </div>
+
+        <div class="demo-grid">
+          <article class="demo-card" data-demo-scope="hand-only">
+            <div class="demo-card-head"><strong>Bottle interaction</strong><span>Hand-only</span></div>
+            <div class="paired-video-frame">
+              <figure class="video-pane">
+                <div class="media-label source-label">Egocentric human</div>
+                <video muted loop playsinline preload="metadata" poster="assets/img/demo/demo-01-source.jpg" data-video-src="assets/videos/demo-01-source.mp4" aria-label="Source human interaction video"></video>
+              </figure>
+              <div class="pair-divider" aria-hidden="true"><span>→</span></div>
+              <figure class="video-pane">
+                <div class="media-label robot-label">Dexterous robot</div>
+                <video muted loop playsinline preload="metadata" poster="assets/img/demo/demo-01-robot.jpg" data-video-src="assets/videos/demo-01-robot.mp4" aria-label="Retargeted dexterous robot video"></video>
+              </figure>
+            </div>
+            <p class="demo-caption">Localized hand replacement while preserving the object state and contact neighborhood.</p>
+          </article>
+
+          <article class="demo-card" data-demo-scope="hand-only">
+            <div class="demo-card-head"><strong>Tool-use interaction</strong><span>Hand-only</span></div>
+            <div class="paired-video-frame">
+              <figure class="video-pane">
+                <div class="media-label source-label">Egocentric human</div>
+                <video muted loop playsinline preload="metadata" poster="assets/img/demo/demo-02-source.jpg" data-video-src="assets/videos/demo-02-source.mp4" aria-label="Source human tool-use video"></video>
+              </figure>
+              <div class="pair-divider" aria-hidden="true"><span>→</span></div>
+              <figure class="video-pane">
+                <div class="media-label robot-label">Dexterous robot</div>
+                <video muted loop playsinline preload="metadata" poster="assets/img/demo/demo-02-robot.jpg" data-video-src="assets/videos/demo-02-robot.mp4" aria-label="Retargeted robot tool-use video"></video>
+              </figure>
+            </div>
+            <p class="demo-caption">The paired view makes embodiment identity, viewpoint, and interaction preservation immediately visible.</p>
+          </article>
+
+          <article class="demo-card" data-demo-scope="hand-arm">
+            <div class="demo-card-head"><strong>Hand-arm retargeting</strong><span>Hand-Arm</span></div>
+            <div class="paired-video-frame">
+              <figure class="video-pane">
+                <div class="media-label source-label">Egocentric human</div>
+                <video muted loop playsinline preload="metadata" poster="assets/img/demo/demo-03-source.jpg" data-video-src="assets/videos/demo-03-source.mp4" aria-label="Source human arm video"></video>
+              </figure>
+              <div class="pair-divider" aria-hidden="true"><span>→</span></div>
+              <figure class="video-pane">
+                <div class="media-label robot-label">Robot hand + arm</div>
+                <video muted loop playsinline preload="metadata" poster="assets/img/demo/demo-03-robot.jpg" data-video-src="assets/videos/demo-03-robot.mp4" aria-label="Retargeted robot hand and arm video"></video>
+              </figure>
+            </div>
+            <p class="demo-caption">Larger-region editing additionally requires plausible arm kinematics and stable scene composition.</p>
+          </article>
+
+          <article class="demo-card" data-demo-scope="hand-arm">
+            <div class="demo-card-head"><strong>Long-horizon / bimanual case</strong><span>Hand-Arm</span></div>
+            <div class="paired-video-frame">
+              <figure class="video-pane">
+                <div class="media-label source-label">Egocentric human</div>
+                <video muted loop playsinline preload="metadata" poster="assets/img/demo/demo-04-source.jpg" data-video-src="assets/videos/demo-04-source.mp4" aria-label="Source long-horizon interaction video"></video>
+              </figure>
+              <div class="pair-divider" aria-hidden="true"><span>→</span></div>
+              <figure class="video-pane">
+                <div class="media-label robot-label">Robot embodiment</div>
+                <video muted loop playsinline preload="metadata" poster="assets/img/demo/demo-04-robot.jpg" data-video-src="assets/videos/demo-04-robot.mp4" aria-label="Retargeted robot long-horizon interaction video"></video>
+              </figure>
+            </div>
+            <p class="demo-caption">Use this slot for long-horizon, bimanual, articulation, or challenging occlusion examples.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="pipeline">
+      <div class="section-kicker">Data curation</div>
+      <h2>A kinematically grounded rendering-and-compositing pipeline</h2>
+      <p class="section-intro">HandEdit removes the human region, restores the occluded background, retargets MANO or 3D hand pose to the target URDF, solves the arm configuration when needed, renders under the egocentric camera, and composites the robotic foreground back into the scene.</p>
+      <figure class="wide-figure paper-figure">
+        <button class="figure-button" type="button" data-lightbox="assets/img/figures/data-curation-pipeline.jpg" aria-label="Open data curation pipeline figure">
+          <img src="assets/img/figures/data-curation-pipeline.jpg" alt="Data curation pipeline with segmentation, inpainting, motion retargeting, robot rendering, and compositing" />
+        </button>
+        <figcaption>Data Curation Pipeline. The pipeline supports both standalone dexterous hands and hand-arm embodiments.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section band" id="dataset">
+      <div class="shell">
+        <div class="section-kicker">HandEdit Dataset</div>
+        <h2>Five sources, broad interaction diversity, 26 target URDF embodiments</h2>
+        <p class="section-intro">The current release aggregates over 200M image-level editing instances from 300K+ clips, spanning 600+ scenes, 1.1K+ objects, and 400+ tasks.</p>
+
+        <div class="dataset-layout">
+          <div class="source-list" aria-label="Source datasets">
+            <article><strong>EgoDex</strong><span>90M frames · 338K clips · 500 household objects · 194 tasks</span></article>
+            <article><strong>ARCTIC</strong><span>2.1M frames · articulated objects · tool-use and grasp</span></article>
+            <article><strong>OakInk2</strong><span>4.01M frames · 75 objects · 150 tasks</span></article>
+            <article><strong>HOI4D</strong><span>2.4M frames · room-scale diversity · 54 tasks</span></article>
+            <article><strong>HO-Cap</strong><span>656K frames · pick-place · handover · tool-use</span></article>
+          </div>
+
+          <div class="coverage-panel">
+            <div class="coverage-head"><h3>Coverage at a glance</h3><span>13 + 13</span></div>
+            <div class="coverage-bars">
+              <div><span>Hand-only URDFs</span><b style="--w:100%"></b><em>13</em></div>
+              <div><span>Hand-arm URDFs</span><b style="--w:100%"></b><em>13</em></div>
+              <div><span>Scenes</span><b style="--w:76%"></b><em>600+</em></div>
+              <div><span>Objects</span><b style="--w:92%"></b><em>1.1K+</em></div>
+              <div><span>Tasks</span><b style="--w:70%"></b><em>400+</em></div>
+            </div>
+          </div>
+        </div>
+
+        <details class="urdf-details">
+          <summary>View representative target embodiment roster</summary>
+          <div class="urdf-columns">
+            <div><h3>Hand-only</h3><p>Ability, Allegro, DexHand021, Inspire RH56DFX, Inspire RH5DG2, Leap, OrcaHand, Revo2, RoHand, Schunk SVH, Shadow Hand, Sharpa, Wuji.</p></div>
+            <div><h3>Hand-arm</h3><p>Jaka, KUKA, Panda, RM65/RM75, UR5, and xArm platforms paired with representative dexterous hands such as Allegro, Leap, Shadow, Sharpa, Wuji, RoHand, and others.</p></div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section shell" id="benchmark">
+      <div class="section-kicker">HandEdit Benchmark</div>
+      <h2>Two evaluation tracks, both embodiment-aware</h2>
+      <p class="section-intro">Each official track contains 1K test images paired with 13 corresponding target embodiments. Models are evaluated under their native conditioning interfaces with fixed prompt templates and standardized settings.</p>
+
+      <div class="track-grid">
+        <article class="track-card">
+          <div class="track-label">Track 01</div>
+          <h3>Hand-only</h3>
+          <p>Replace the local human hand region with a requested dexterous robot hand while preserving object state and hand-object interaction.</p>
+          <ul class="mini-list"><li>13 standalone hand embodiments</li><li>Localized edited ROI</li><li>Strong morphology sensitivity</li></ul>
+        </article>
+        <article class="track-card featured">
+          <div class="track-label">Track 02</div>
+          <h3>Hand-Arm</h3>
+          <p>Replace the visible human hand and forearm/full arm with a target hand-arm embodiment under larger-region scene constraints.</p>
+          <ul class="mini-list"><li>13 hand-arm embodiments</li><li>Larger background recovery region</li><li>Arm kinematics and composition</li></ul>
+        </article>
+      </div>
+
+      <div class="metrics-wrap">
+        <div class="metric-intro">
+          <div class="section-kicker">Evaluation stack</div>
+          <h3>Measure what generic image quality misses</h3>
+          <p>HandEdit combines complementary signals so a visually plausible but embodiment-wrong edit cannot dominate the benchmark.</p>
+        </div>
+        <div class="metric-stack">
+          <article><span class="metric-num">01</span><div><h4>Generic Similarity</h4><p>PSNR · SSIM · LPIPS · FID on full image, ROI, and background where applicable.</p></div></article>
+          <article><span class="metric-num">02</span><div><h4>VLM-based Judgment</h4><p>Semantic Consistency (SC) and Perceptual Quality (PQ), combined into a normalized VLM score.</p></div></article>
+          <article><span class="metric-num">03</span><div><h4>Embodiment-Aware Metrics</h4><p>Human-hand Removal · Structural Fidelity · ID Fidelity · Interaction Consistency.</p></div></article>
+        </div>
+      </div>
+
+      <div class="figure-pair">
+        <figure class="paper-figure compact-figure">
+          <button class="figure-button" type="button" data-lightbox="assets/img/figures/failure-modes.jpg" aria-label="Open common failure modes figure">
+            <img src="assets/img/figures/failure-modes.jpg" alt="Common failure modes including human-hand artifacts, embodiment mismatch, interaction failure, incorrect viewpoint, and background inconsistency" />
+          </button>
+          <figcaption>Common failure modes expose why perceptual quality alone is insufficient.</figcaption>
+        </figure>
+        <figure class="paper-figure compact-figure">
+          <button class="figure-button" type="button" data-lightbox="assets/img/figures/vlm-judgment.jpg" aria-label="Open VLM judgment figure">
+            <img src="assets/img/figures/vlm-judgment.jpg" alt="VLM judgment protocol using source image, target URDF render, instruction, edited image, semantic consistency, and perceptual quality" />
+          </button>
+          <figcaption>VLM judgment decomposes semantic consistency and perceptual quality.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section results-band" id="leaderboard">
+      <div class="shell">
+        <div class="leaderboard-heading">
+          <div>
+            <div class="section-kicker">Benchmark results</div>
+            <h2>11 representative editors under the unified protocol</h2>
+            <p class="section-intro">The compact table surfaces the metrics most useful for web comparison. Full paper tables additionally report region-wise PSNR, SSIM, LPIPS, and FID.</p>
+          </div>
+          <div class="tab-controls" role="tablist" aria-label="Leaderboard track">
+            <button class="tab-btn active" data-track="hand-only" type="button" role="tab" aria-selected="true">Hand-only</button>
+            <button class="tab-btn" data-track="hand-arm" type="button" role="tab" aria-selected="false">Hand-Arm</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="leaderboard-table">
+            <thead>
+              <tr>
+                <th>Model</th><th>Access</th><th>LPIPS ROI ↓</th><th>FID ROI ↓</th><th>Removal ↑</th><th>Struct ↑</th><th>ID ↑</th><th>Interaction ↑</th><th>VLM ↑</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="table-note">Best and second-best values are highlighted automatically within the selected track. Numbers are transcribed from the latest manuscript tables.</p>
+
+        <div class="insight-grid">
+          <article><span>Finding 01</span><h3>GPT-Image-2 is the strongest overall baseline</h3><p>It leads key local editing and embodiment-aware measures, including structural fidelity and interaction preservation.</p></article>
+          <article><span>Finding 02</span><h3>VLM judgment is useful but not sufficient</h3><p>High semantic/perceptual scores do not always align with fine-grained morphology or contact-level interaction preservation.</p></article>
+          <article><span>Finding 03</span><h3>Embodiment-aware editing remains the core challenge</h3><p>Human-hand removal is comparatively easier; structural fidelity, robot identity, and interaction show larger gaps.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="paper-note">
+      <div class="release-note">
+        <div><div class="section-kicker">Anonymous release</div><h2>Prepared for review-safe deployment</h2></div>
+        <p>This version keeps anonymous authorship, avoids analytics and third-party trackers, uses local assets, and points code to the anonymous repository. Before public deployment, verify the final domain, Git history, image/video metadata, and any paper link against the current NeurIPS anonymity policy.</p>
+      </div>
+    </section>
+
+    <section class="citation-section">
+      <div class="shell citation-grid">
+        <div>
+          <div class="section-kicker">Citation</div>
+          <h2>HandEdit</h2>
+          <p>Replace the placeholder BibTeX key and author list after the double-blind period.</p>
+        </div>
+        <div class="citation-card">
+          <div class="citation-top"><span>BibTeX</span><button id="copy-citation" type="button">Copy</button></div>
+          <pre id="citation">@inproceedings{anonymous2026handedit,
+  title={HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing},
+  author={Anonymous Author(s)},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2026}
+}</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span>HandEdit · Anonymous Review Website · Version 2</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Figure preview">
+    <button class="lightbox-close" type="button" aria-label="Close figure">×</button>
+    <img src="" alt="Expanded paper figure" />
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
