@@ -75,14 +75,6 @@
       </figure>
     </section>
 
-    <section class="tldr shell" aria-label="HandEdit summary">
-      <div class="tldr-label">TL;DR</div>
-      <div class="tldr-grid">
-        <article><span class="tldr-num">01</span><p><strong>Scale human experience.</strong> Build 200M+ editing instances from five egocentric manipulation datasets.</p></article>
-        <article><span class="tldr-num">02</span><p><strong>Edit by embodiment.</strong> Evaluate 13 hand-only and 13 hand-arm URDF targets.</p></article>
-        <article><span class="tldr-num">03</span><p><strong>Measure what matters.</strong> Go beyond visual realism to embodiment fidelity and interaction preservation.</p></article>
-      </div>
-    </section>
 
     <section class="section shell text-section" id="overview">
       <div class="section-heading centered">
@@ -223,17 +215,6 @@
           <article><span>Layer 1</span><h3>Generic Similarity</h3><p>PSNR · SSIM · LPIPS · FID across full image, ROI, and background.</p></article>
           <article><span>Layer 2</span><h3>VLM Judgment</h3><p>Semantic Consistency (SC) and Perceptual Quality (PQ).</p></article>
           <article><span>Layer 3</span><h3>Embodiment-Aware</h3><p>Human-hand Removal · Structural Fidelity · ID Fidelity · Interaction.</p></article>
-        </div>
-
-        <div class="figure-stack">
-          <figure class="figure wide">
-            <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig4-failure-modes.webp"><img src="assets/figures/fig4-failure-modes.webp" alt="Common failure modes of existing URDF-conditioned image editors" loading="lazy" /></button>
-            <figcaption>Common failure modes: residual human artifacts, embodiment mismatch, interaction failure, incorrect viewpoint, and background inconsistency.</figcaption>
-          </figure>
-          <figure class="figure medium">
-            <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig5-vlm-metric.webp"><img src="assets/figures/fig5-vlm-metric.webp" alt="VLM-based judgment protocol with semantic consistency and perceptual quality" loading="lazy" /></button>
-            <figcaption>VLM-based judgment decomposes semantic consistency and perceptual quality rather than collapsing them into one opaque score.</figcaption>
-          </figure>
         </div>
       </div>
     </section>
