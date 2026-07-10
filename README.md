@@ -1,4 +1,4 @@
-# HandEdit Project Page — Version 2
+# HandEdit 
 
 This static website is redesigned from the latest `HandEdit_NeurIPS_2026.pdf` manuscript and follows the clean academic project-page rhythm of ManipTrans while adding benchmark-specific components.
 
