@@ -116,3 +116,184 @@ button{color:inherit}
   .section{padding:62px 0}.source-cards{grid-template-columns:1fr}.embodiment-grid{grid-template-columns:repeat(2,1fr)}.demo-meta{flex-wrap:wrap}.demo-meta em{margin-left:0}.segmented{width:100%;overflow:auto}.segment{flex:1}.release-card{padding:25px}.citation-grid h2{font-size:38px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.demo-pair,.embodiment-card,.resource-button{transition:none}}
+
+/* =========================================================
+   HandEdit Academic Typography Refinement
+   Balanced for long benchmark titles, dense figures, and tables.
+   Drop-in replacement for assets/style.css
+   ========================================================= */
+
+/* Global type system */
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+}
+
+.hero h1,
+.section-heading h2,
+.release-card h2,
+.citation-grid h2,
+.authors strong,
+.track-index{
+  font-family:"Source Sans 3",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+/* Navigation */
+.brand{font-size:20px}
+.nav-links a{font-size:14px}
+
+/* Hero */
+.venue{font-size:13px}
+.hero h1{
+  max-width:1050px;
+  margin:18px auto 18px;
+  font-size:clamp(40px,4.2vw,54px);
+  line-height:1.10;
+  font-weight:700;
+  letter-spacing:-.025em;
+}
+.hero-summary{
+  max-width:820px;
+  font-size:17px;
+  line-height:1.68;
+}
+.authors strong{
+  font-size:18px;
+  font-weight:600;
+}
+.authors span{
+  font-size:15px;
+  line-height:1.55;
+}
+.resource-button{font-size:13.5px}
+.resource-button.large{font-size:14px}
+
+/* Main section hierarchy */
+.section-heading h2{
+  margin:8px 0 14px;
+  font-size:clamp(30px,3vw,36px);
+  line-height:1.18;
+  font-weight:700;
+  letter-spacing:-.02em;
+}
+.section-heading p{
+  font-size:16px;
+  line-height:1.72;
+}
+
+/* Abstract and prose */
+.abstract-copy p{
+  font-size:16.5px;
+  line-height:1.76;
+}
+
+/* TL;DR (harmless if section was removed from index.html) */
+.tldr-grid p{
+  font-size:14px;
+  line-height:1.62;
+}
+.tldr-label,.tldr-num{font-size:11px}
+
+/* Contributions */
+.contribution-grid h3{
+  font-size:18px;
+  line-height:1.35;
+}
+.contribution-grid p{
+  font-size:14px;
+  line-height:1.60;
+}
+
+/* Demos */
+.demo-meta strong{font-size:15px}
+.demo-meta>span{font-size:11px}
+.demo-meta em{font-size:11px}
+.video-label{font-size:11px}
+.demo-note{font-size:12.5px}
+
+/* Dataset */
+.source-cards strong{font-size:15px}
+.source-cards span{font-size:19px}
+.source-cards p{
+  font-size:13.5px;
+  line-height:1.55;
+}
+
+/* Embodiments */
+.embodiment-card strong{
+  font-size:12px;
+  line-height:1.40;
+}
+
+/* Benchmark */
+.track-cards h3{
+  font-size:24px;
+  line-height:1.25;
+}
+.track-cards p{
+  font-size:14.5px;
+  line-height:1.65;
+}
+.metric-layers h3{font-size:18px}
+.metric-layers p{
+  font-size:14px;
+  line-height:1.60;
+}
+
+/* Figures */
+.figure figcaption{
+  font-size:13.5px;
+  line-height:1.55;
+}
+
+/* Results table */
+table{font-size:12.5px}
+th{font-size:10.5px}
+.table-note{font-size:12.5px}
+.access-badge{font-size:9.5px}
+
+/* Findings */
+.finding-grid h3{
+  font-size:18px;
+  line-height:1.40;
+}
+.finding-grid p{
+  font-size:14px;
+  line-height:1.62;
+}
+
+/* Release and citation */
+.release-card h2{font-size:36px}
+.release-card p{font-size:15px}
+.citation-grid h2{font-size:40px}
+.citation-grid p{font-size:15px}
+.citation-box pre{
+  font-size:12px;
+  line-height:1.60;
+}
+
+/* Responsive typography */
+@media (max-width:780px){
+  body{font-size:16px}
+  .hero h1{
+    font-size:clamp(34px,9vw,42px);
+    line-height:1.12;
+  }
+  .hero-summary{font-size:16px}
+  .section-heading h2{
+    font-size:clamp(28px,7.5vw,34px);
+    line-height:1.18;
+  }
+  .authors strong{font-size:17px}
+  .authors span{font-size:14px}
+  .abstract-copy p{font-size:16px}
+  .figure figcaption{font-size:13px}
+}
+
+@media (max-width:500px){
+  body{font-size:15.5px}
+  .hero h1{font-size:clamp(32px,9.5vw,39px)}
+  .section-heading h2{font-size:clamp(27px,8vw,32px)}
+  .nav-links a{font-size:14px}
+}
