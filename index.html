@@ -6,7 +6,13 @@
   <meta name="description" content="HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing" />
   <meta name="robots" content="noindex,nofollow,noarchive" />
   <meta name="theme-color" content="#fbfcfe" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="HandEdit — A Unified Benchmark for Dexterous Hand Image Editing" />
+  <meta property="og:description" content="200M+ embodiment-aware edits across 26 dexterous robot hand and hand-arm targets." />
+  <meta property="og:image" content="https://jiaonb.github.io/handedit/assets/figures/fig1-teaser.webp" />
   <title>HandEdit — Egocentric Human-to-Robot Dexterous Hand Image Editing</title>
+  <link rel="icon" href="assets/handedit-mark.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/figures/fig1-teaser.webp" as="image" type="image/webp" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -31,7 +37,7 @@
   <main id="main">
     <section class="hero shell">
       <p class="venue">NeurIPS 2026 Submission</p>
-      <h1><span class="hero-logo">HandEdit</span><span class="hero-sep">:</span> A Unified Benchmark for Egocentric<br class="desktop-break" /> Human-to-Robot Dexterous Hand Image Editing</h1>
+      <h1><span class="hero-logo">HandEdit</span><span class="hero-sep">:</span> A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing</h1>
       <p class="hero-summary">A large-scale, embodiment-aware dataset and benchmark for transforming egocentric human manipulation into diverse dexterous robot hand and hand-arm embodiments.</p>
 
       <div class="authors" aria-label="Authors">
@@ -58,6 +64,13 @@
         </a>
       </div>
 
+      <figure class="figure wide teaser-figure">
+        <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig1-teaser.webp" aria-label="Open HandEdit overview figure">
+          <img src="assets/figures/fig1-teaser.webp" alt="HandEdit overview with human-to-robot editing examples, dataset statistics, embodiment coverage, source datasets, and representative editors" width="2077" height="1023" />
+        </button>
+        <figcaption>HandEdit unifies egocentric human interaction data, URDF-specified robot embodiments, and representative image editors under one benchmark.</figcaption>
+      </figure>
+
       <div class="headline-stats" aria-label="Headline benchmark statistics">
         <div><strong>200M+</strong><span>editing instances</span></div>
         <div><strong>300K+</strong><span>source clips</span></div>
@@ -66,13 +79,6 @@
         <div><strong>1.1K+</strong><span>objects</span></div>
         <div><strong>400+</strong><span>tasks</span></div>
       </div>
-
-      <figure class="figure wide teaser-figure">
-        <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig1-teaser.webp" aria-label="Open HandEdit overview figure">
-          <img src="assets/figures/fig1-teaser.webp" alt="HandEdit overview with human-to-robot editing examples, dataset statistics, embodiment coverage, source datasets, and representative editors" width="2077" height="1023" />
-        </button>
-        <figcaption>HandEdit unifies egocentric human interaction data, URDF-specified robot embodiments, and representative image editors under one benchmark.</figcaption>
-      </figure>
     </section>
 
     <section class="tldr shell" aria-label="HandEdit summary">
@@ -107,7 +113,7 @@
           <div>
             <span class="eyebrow">Paired demos</span>
             <h2>Human interaction in. Robot embodiment out.</h2>
-            <p>Each row is a synchronized source-to-robot pair. Add your MP4 files later and the page will automatically replace the supplied poster frames without changing the layout.</p>
+            <p>Synchronized examples show how the same egocentric interaction is translated across standalone dexterous hands and full hand-arm embodiments.</p>
           </div>
           <div class="segmented" role="tablist" aria-label="Filter demos">
             <button class="segment active" type="button" data-demo-filter="all" aria-selected="true">All</button>
@@ -118,39 +124,38 @@
 
         <div class="demo-list">
           <article class="demo-pair" data-demo-scope="hand-only">
-            <div class="demo-meta"><span>Demo 01</span><strong>Object manipulation</strong><em>Hand-only</em></div>
+            <div class="demo-meta"><span>Demo 01</span><strong>Laptop manipulation</strong><em>Hand-only</em></div>
             <div class="pair-stage" data-video-pair>
-              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-01-source.webp" data-src="assets/videos/demo-01-source.mp4"></video></figure>
+              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-01-source.webp" data-src="assets/videos/demo-01-source.mp4" aria-label="Human laptop manipulation"></video></figure>
               <div class="pair-arrow" aria-hidden="true">→</div>
-              <figure class="video-cell"><span class="video-label robot">Dexterous Robot</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-01-robot.webp" data-src="assets/videos/demo-01-robot.mp4"></video></figure>
+              <figure class="video-cell"><span class="video-label robot">Allegro Hand</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-01-robot.webp" data-src="assets/videos/demo-01-robot.mp4" aria-label="Allegro hand laptop manipulation"></video></figure>
             </div>
           </article>
           <article class="demo-pair" data-demo-scope="hand-only">
-            <div class="demo-meta"><span>Demo 02</span><strong>Fine-grained interaction</strong><em>Hand-only</em></div>
+            <div class="demo-meta"><span>Demo 02</span><strong>Apple grasp</strong><em>Hand-only</em></div>
             <div class="pair-stage" data-video-pair>
-              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-02-source.webp" data-src="assets/videos/demo-02-source.mp4"></video></figure>
+              <figure class="video-cell"><span class="video-label human">Human Interaction</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-02-source.webp" data-src="assets/videos/demo-02-source.mp4" aria-label="Human apple grasp"></video></figure>
               <div class="pair-arrow" aria-hidden="true">→</div>
-              <figure class="video-cell"><span class="video-label robot">Dexterous Robot</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-02-robot.webp" data-src="assets/videos/demo-02-robot.mp4"></video></figure>
+              <figure class="video-cell"><span class="video-label robot">Ability Hand</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-02-robot.webp" data-src="assets/videos/demo-02-robot.mp4" aria-label="Ability hand apple grasp"></video></figure>
             </div>
           </article>
           <article class="demo-pair" data-demo-scope="hand-arm">
-            <div class="demo-meta"><span>Demo 03</span><strong>Large-region replacement</strong><em>Hand-Arm</em></div>
+            <div class="demo-meta"><span>Demo 03</span><strong>Mixer grasp</strong><em>Hand-Arm</em></div>
             <div class="pair-stage" data-video-pair>
-              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-03-source.webp" data-src="assets/videos/demo-03-source.mp4"></video></figure>
+              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-03-source.webp" data-src="assets/videos/demo-03-source.mp4" aria-label="Human mixer grasp"></video></figure>
               <div class="pair-arrow" aria-hidden="true">→</div>
-              <figure class="video-cell"><span class="video-label robot">Robot Hand + Arm</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-03-robot.webp" data-src="assets/videos/demo-03-robot.mp4"></video></figure>
+              <figure class="video-cell"><span class="video-label robot">Jaka + DexHand021</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-03-robot.webp" data-src="assets/videos/demo-03-robot.mp4" aria-label="Jaka arm and DexHand021 mixer grasp"></video></figure>
             </div>
           </article>
           <article class="demo-pair" data-demo-scope="hand-arm">
-            <div class="demo-meta"><span>Demo 04</span><strong>Challenging viewpoint</strong><em>Hand-Arm</em></div>
+            <div class="demo-meta"><span>Demo 04</span><strong>Articulated box</strong><em>Hand-Arm</em></div>
             <div class="pair-stage" data-video-pair>
-              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-04-source.webp" data-src="assets/videos/demo-04-source.mp4"></video></figure>
+              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-04-source.webp" data-src="assets/videos/demo-04-source.mp4" aria-label="Human articulated box interaction"></video></figure>
               <div class="pair-arrow" aria-hidden="true">→</div>
-              <figure class="video-cell"><span class="video-label robot">Robot Hand + Arm</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-04-robot.webp" data-src="assets/videos/demo-04-robot.mp4"></video></figure>
+              <figure class="video-cell"><span class="video-label robot">iiwa7 + Sharpa</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-04-robot.webp" data-src="assets/videos/demo-04-robot.mp4" aria-label="iiwa7 arm and Sharpa hand articulated box interaction"></video></figure>
             </div>
           </article>
         </div>
-        <p class="demo-note"><strong>Video filenames:</strong> <code>assets/videos/demo-01-source.mp4</code> … <code>demo-04-robot.mp4</code>. The poster images remain visible when a video is absent.</p>
       </div>
     </section>
 
@@ -312,7 +317,7 @@
 
   <dialog class="lightbox" id="lightbox" aria-label="Expanded figure">
     <button class="lightbox-close" type="button" aria-label="Close">×</button>
-    <img src="" alt="Expanded project figure" />
+    <img alt="Expanded project figure" />
   </dialog>
 
   <script src="assets/main.js" defer></script>

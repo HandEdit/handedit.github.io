@@ -86,15 +86,16 @@ document.querySelectorAll("[data-demo-filter]").forEach(btn=>btn.addEventListene
   const filter=btn.dataset.demoFilter;
   document.querySelectorAll("[data-demo-filter]").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
   btn.classList.add("active");btn.setAttribute("aria-selected","true");
-  document.querySelectorAll(".demo-pair").forEach(card=>card.hidden=filter!=="all"&&card.dataset.demoScope!==filter);
+  document.querySelectorAll(".demo-pair").forEach(card=>{
+    card.hidden=filter!=="all"&&card.dataset.demoScope!==filter;
+    if(card.hidden)card.querySelectorAll("video").forEach(video=>video.pause());
+  });
 }));
 
-// Load optional MP4 files only when they exist. Posters remain clean fallbacks.
-document.querySelectorAll("video[data-src]").forEach(async video=>{
-  try{
-    const r=await fetch(video.dataset.src,{method:"HEAD",cache:"no-store"});
-    if(r.ok){video.src=video.dataset.src;video.load();}
-  }catch(_){/* poster fallback */}
+// Load the lightweight web demos; posters remain available on slow connections.
+document.querySelectorAll("video[data-src]").forEach(video=>{
+  video.addEventListener("error",()=>video.removeAttribute("src"),{once:true});
+  video.src=video.dataset.src;
 });
 
 // Keep paired videos together and play only visible pairs.
@@ -147,3 +148,14 @@ copyButton.addEventListener("click",async()=>{
 const toggle=document.querySelector(".nav-toggle"), nav=document.querySelector("#nav-links");
 toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open))});
 nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");toggle.setAttribute("aria-expanded","false")}));
+
+// Reflect the current section in the compact navigation.
+const navTargets=[...nav.querySelectorAll("a[href^='#']")]
+  .map(link=>({link,section:document.querySelector(link.getAttribute("href"))}))
+  .filter(item=>item.section);
+const navObserver=new IntersectionObserver(entries=>{
+  const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+  if(!visible)return;
+  navTargets.forEach(({link,section})=>link.toggleAttribute("aria-current",section===visible.target));
+},{rootMargin:"-20% 0px -68% 0px",threshold:[0,.15,.4]});
+navTargets.forEach(({section})=>navObserver.observe(section));

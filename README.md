@@ -12,6 +12,8 @@ This static website is redesigned from the latest `HandEdit_NeurIPS_2026.pdf` ma
 - Added actual manuscript figures for overview, data curation, failure modes, and VLM-based judgment.
 - Added paired demo cards: source human video on the left, retargeted robot or robot-arm video on the right.
 - Added demo filtering, responsive paired video layout, automatic visible-video playback, figure lightbox, and best/second-best result highlighting.
+- Refined the typography and page rhythm against leading robotics project pages, with a restrained 16px type scale, a more compact hero, wider media canvas, and denser benchmark sections.
+- Added four optimized real demo pairs (about 11 MB total) and matching poster frames for fast GitHub Pages delivery.
 
 ## Preview locally
 
@@ -29,9 +31,9 @@ http://localhost:8080/
 
 Do not open `index.html` directly with `file://` if you want the JSON leaderboard to load; use a local HTTP server.
 
-## Add your real demo videos
+## Demo videos
 
-Copy MP4 files into `assets/videos/` using:
+The website ships with four lightweight source/robot pairs in `assets/videos/`:
 
 ```text
 demo-01-source.mp4
@@ -44,9 +46,9 @@ demo-04-source.mp4
 demo-04-robot.mp4
 ```
 
-The page will automatically use them. Current poster images remain as fallbacks.
+The page automatically loads them when the cards enter the viewport. Matching WebP poster images in `assets/demo/` remain visible while media loads.
 
-To add more pairs, duplicate one `.demo-card` block in `index.html`, update the filenames and `data-demo-scope`, then add the new videos.
+To replace a pair, keep the same filenames and encode web-ready H.264 MP4 files with `faststart` enabled. To add more pairs, duplicate one `.demo-pair` block in `index.html`, update the filenames and `data-demo-scope`, then add the new videos.
 
 ## Result data
 
