@@ -12,6 +12,8 @@
   <meta property="og:image" content="https://jiaonb.github.io/handedit/assets/videos/teaser-poster.jpg">
   <title>HandEdit | Egocentric Human-to-Robot Dexterous Hand Image Editing</title>
   <link rel="icon" href="assets/handedit-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/videos/teaser-poster.jpg" as="image" type="image/jpeg">
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -235,10 +237,6 @@
           <span aria-hidden="true"></span>
         </header>
 
-        <div class="control-row" role="tablist" aria-label="Qualitative comparison panel">
-          <button class="control-tab qualitative-tab active" type="button" data-panel="hand-arm" aria-selected="true">Hand / Hand-Arm</button>
-          <button class="control-tab qualitative-tab" type="button" data-panel="hand-only" aria-selected="false">Alternative panel</button>
-        </div>
         <figure class="paper-figure comparison-figure">
           <button class="figure-button" type="button" data-lightbox="assets/figures/qualitative-hand-arm.webp" aria-label="Open qualitative comparison">
             <img id="qualitative-image" src="assets/figures/qualitative-hand-arm.webp" alt="Qualitative comparison across commercial and open-source editors" loading="lazy">

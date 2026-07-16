@@ -215,40 +215,6 @@ initializeTabGroup({
   onSelect: renderLeaderboard
 });
 
-const qualitative = {
-  "hand-arm": {
-    src: "assets/figures/qualitative-hand-arm.webp",
-    alt: "Qualitative HandEdit comparison across commercial and open-source editors",
-    caption: "Human inputs and edited outputs from representative commercial and open-source editors."
-  },
-  "hand-only": {
-    src: "assets/figures/qualitative-hand-only.webp",
-    alt: "Alternative HandEdit qualitative comparison panel",
-    caption: "Alternative comparison panel for detailed model-by-model inspection."
-  }
-};
-
-function renderQualitative(panelKey) {
-  const item = qualitative[panelKey];
-  const image = document.querySelector("#qualitative-image");
-  const caption = document.querySelector("#qualitative-caption");
-  const trigger = image.closest("button");
-  image.src = item.src;
-  image.alt = item.alt;
-  trigger.dataset.lightbox = item.src;
-  trigger.setAttribute("aria-label", `Open ${item.alt}`);
-  caption.innerHTML = `<strong>Qualitative comparison.</strong> ${item.caption}`;
-}
-
-const qualitativeFigure = document.querySelector(".comparison-figure");
-qualitativeFigure.id = "qualitative-panel";
-initializeTabGroup({
-  selector: ".qualitative-tab",
-  panel: "#qualitative-panel",
-  dataAttribute: "panel",
-  onSelect: renderQualitative
-});
-
 // Teaser video: keep the supplied poster and play treatment while retaining native controls.
 const teaserPlayer = document.querySelector("#teaser-player");
 const teaserVideo = document.querySelector("#teaser-video");
