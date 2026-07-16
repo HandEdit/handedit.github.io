@@ -112,7 +112,7 @@ const transferTasks = {
   box: {
     title: "Articulated box",
     aspect: 1.3989,
-    rows: [["human", "Human", "human"], ["dexhand021_jaka", "DexHand021", "robot"], ["rh56dfx_ur5", "RH56DFX", "robot"], ["sharpa_iiwa7", "Sharpa + iiwa7", "robot"]]
+    rows: [["human", "Human", "human"], ["dexhand021_jaka", "DexHand021", "robot"], ["rh56dfx_ur5", "RH56DFX", "robot"], ["sharpa_iiwa7", "Sharpa", "robot"]]
   }
 };
 
