@@ -1,305 +1,274 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing" />
-  <meta name="robots" content="noindex,nofollow,noarchive" />
-  <meta name="theme-color" content="#fbfcfe" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="HandEdit — A Unified Benchmark for Dexterous Hand Image Editing" />
-  <meta property="og:description" content="200M+ embodiment-aware edits across 26 dexterous robot hand and hand-arm targets." />
-  <meta property="og:image" content="https://jiaonb.github.io/handedit/assets/figures/fig1-teaser.webp" />
-  <title>HandEdit — Egocentric Human-to-Robot Dexterous Hand Image Editing</title>
-  <link rel="icon" href="assets/handedit-mark.svg" type="image/svg+xml" />
-  <link rel="preload" href="assets/figures/fig1-teaser.webp" as="image" type="image/webp" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#f6f7f9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HandEdit: Egocentric Human-to-Robot Dexterous Hand Image Editing">
+  <meta property="og:description" content="A large-scale, embodiment-aware dataset and benchmark for dexterous robot hand image editing.">
+  <meta property="og:image" content="https://jiaonb.github.io/handedit/assets/figures/fig1-teaser.webp">
+  <title>HandEdit | Egocentric Human-to-Robot Dexterous Hand Image Editing</title>
+  <link rel="icon" href="assets/handedit-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/figures/fig1-teaser.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="top">
     <nav class="nav shell" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="HandEdit home"><span class="brand-hand">Hand</span><span class="brand-edit">Edit</span></a>
+      <a class="brand" href="#top" aria-label="HandEdit home">Hand<span>Edit</span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links" id="nav-links">
-        <a href="#overview">Overview</a>
-        <a href="#demos">Demos</a>
+        <a href="#abstract">Abstract</a>
+        <a href="#transfer">Transfer</a>
         <a href="#dataset">Dataset</a>
-        <a href="#benchmark">Benchmark</a>
+        <a href="#embodiments">Embodiments</a>
         <a href="#results">Results</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero shell">
-      <p class="venue">NeurIPS 2026 Submission</p>
-      <h1><span class="hero-logo">HandEdit</span><span class="hero-sep">:</span> A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing</h1>
-      <p class="hero-summary">A large-scale, embodiment-aware dataset and benchmark for transforming egocentric human manipulation into diverse dexterous robot hand and hand-arm embodiments.</p>
+    <section class="hero shell" aria-labelledby="paper-title">
+      <p class="venue"><span aria-hidden="true"></span>NeurIPS 2026 Submission<span aria-hidden="true"></span></p>
+      <h1 id="paper-title">
+        <span class="project-name">HandEdit</span>
+        <span class="paper-title">A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing</span>
+      </h1>
+      <p class="hero-summary">Transforming abundant egocentric human manipulation into diverse, embodiment-aware dexterous robot experience.</p>
 
-      <div class="authors" aria-label="Authors">
+      <div class="authors" aria-label="Authors and affiliation">
         <strong>Anonymous Author(s)</strong>
         <span>Anonymous Affiliation</span>
       </div>
 
       <div class="resource-row" aria-label="Project resources">
-        <a class="resource-button primary" href="https://anonymous.4open.science/r/HandEdit/README.md" target="_blank" rel="noreferrer">
+        <a class="resource-link primary" href="https://anonymous.4open.science/r/HandEdit/README.md" target="_blank" rel="noreferrer">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.7 18.2c-4.4 1.3-4.4-2.2-6.2-2.7m12.4 5.4v-3.4c0-1 .1-1.4-.5-2 3.2-.4 6.5-1.6 6.5-7A5.5 5.5 0 0 0 19.4 5c.1-.4.6-1.9-.1-3.6 0 0-1.2-.4-3.7 1.4a12.8 12.8 0 0 0-6.8 0C6.2 1 5 1.4 5 1.4 4.3 3 4.8 4.6 4.9 5a5.5 5.5 0 0 0-1.5 3.8c0 5.3 3.3 6.5 6.5 6.9-.4.4-.8 1.1-.8 2.1V21"/></svg>
-          Anonymous Code
+          Code
         </a>
-        <a class="resource-button" href="#dataset">
+        <a class="resource-link" href="#dataset">
           <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v7c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 12v7c0 1.7 3.1 3 7 3s7-1.3 7-3v-7"/></svg>
           Dataset
         </a>
-        <a class="resource-button" href="#results">
+        <a class="resource-link" href="#results">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>
           Results
         </a>
-        <a class="resource-button" href="#citation">
+        <a class="resource-link" href="#citation">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h6v6H7zM13 8c0-3 1.5-5 4-6m0 6h4v6h-4z"/></svg>
           BibTeX
         </a>
       </div>
 
-      <figure class="figure wide teaser-figure">
-        <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig1-teaser.webp" aria-label="Open HandEdit overview figure">
-          <img src="assets/figures/fig1-teaser.webp" alt="HandEdit overview with human-to-robot editing examples, dataset statistics, embodiment coverage, source datasets, and representative editors" width="2077" height="1023" />
-        </button>
-        <figcaption>HandEdit unifies egocentric human interaction data, URDF-specified robot embodiments, and representative image editors under one benchmark.</figcaption>
+      <figure class="teaser-figure">
+        <div class="teaser-media">
+          <video id="teaser-video" controls muted loop playsinline preload="metadata" poster="assets/figures/fig1-teaser.webp" aria-label="HandEdit teaser video">
+            <source src="assets/videos/teaser.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="teaser-placeholder" id="teaser-placeholder" aria-hidden="true">
+            <span>Teaser video</span>
+            <small>Project overview</small>
+          </div>
+        </div>
+        <figcaption><strong>Figure 1.</strong> HandEdit turns egocentric human interaction into robot-centric visual experience under diverse dexterous embodiments.</figcaption>
       </figure>
+    </section>
 
-      <div class="headline-stats" aria-label="Headline benchmark statistics">
-        <div><strong>200M+</strong><span>editing instances</span></div>
-        <div><strong>300K+</strong><span>source clips</span></div>
-        <div><strong>26</strong><span>target embodiments</span></div>
-        <div><strong>600+</strong><span>scenes</span></div>
-        <div><strong>1.1K+</strong><span>objects</span></div>
-        <div><strong>400+</strong><span>tasks</span></div>
+    <section class="section abstract-section shell" id="abstract">
+      <header class="paper-heading">
+        <span aria-hidden="true"></span>
+        <h2>Abstract</h2>
+        <span aria-hidden="true"></span>
+      </header>
+      <div class="abstract-body">
+        <p>Robotic manipulation with dexterous hands is a cornerstone of Embodied AI, yet embodiment-aware teleoperation data remains costly to collect. Egocentric human videos offer a scalable alternative, but human and robotic hands differ profoundly in appearance, articulation, kinematics, and camera-relative geometry. <strong>HandEdit</strong> formulates this gap as an embodiment-aware image-editing problem. The benchmark asks an editor to replace the visible human hand or hand-arm region with a requested dexterous robot embodiment while preserving object state, task semantics, contact relationships, viewpoint, and surrounding scene structure.</p>
       </div>
     </section>
 
-    <section class="tldr shell" aria-label="HandEdit summary">
-      <div class="tldr-label">TL;DR</div>
-      <div class="tldr-grid">
-        <article><span class="tldr-num">01</span><p><strong>Scale human experience.</strong> Build 200M+ editing instances from five egocentric manipulation datasets.</p></article>
-        <article><span class="tldr-num">02</span><p><strong>Edit by embodiment.</strong> Evaluate 13 hand-only and 13 hand-arm URDF targets.</p></article>
-        <article><span class="tldr-num">03</span><p><strong>Measure what matters.</strong> Go beyond visual realism to embodiment fidelity and interaction preservation.</p></article>
-      </div>
-    </section>
-
-    <section class="section shell text-section" id="overview">
-      <div class="section-heading centered">
-        <span class="eyebrow">Overview</span>
-        <h2>From abundant human video to robot-centric visual experience</h2>
-      </div>
-      <div class="abstract-copy">
-        <p>Robotic manipulation with dexterous hands is a cornerstone of Embodied AI, yet embodiment-aware teleoperation data remains costly to collect. Egocentric human videos offer a scalable alternative, but human and robotic hands differ profoundly in appearance, articulation, kinematics, and camera-relative geometry.</p>
-        <p><strong>HandEdit</strong> formulates this gap as an embodiment-aware image-editing problem. The benchmark asks an editor to replace the visible human hand or hand-arm region with a requested dexterous robot embodiment while preserving object state, task semantics, contact relationships, viewpoint, and surrounding scene structure.</p>
-      </div>
-      <div class="contribution-grid">
-        <article><span>Dataset</span><h3>200M+ edits from five sources</h3><p>Large-scale cross-embodiment pairings built from diverse egocentric manipulation data.</p></article>
-        <article><span>Coverage</span><h3>26 URDF targets</h3><p>Thirteen standalone hands and thirteen hand-arm embodiments with diverse morphology.</p></article>
-        <article><span>Protocol</span><h3>Two benchmark tracks</h3><p>Hand-only and Hand-Arm evaluation under embodiment-specific conditioning.</p></article>
-        <article><span>Evaluation</span><h3>Three complementary layers</h3><p>Generic similarity, VLM judgment, and embodiment-aware task metrics.</p></article>
-      </div>
-    </section>
-
-    <section class="section demo-section" id="demos">
-      <div class="shell">
-        <div class="section-heading split">
+    <section class="section transfer-section" id="transfer">
+      <div class="shell-wide">
+        <header class="paper-heading with-subtitle">
+          <span aria-hidden="true"></span>
           <div>
-            <span class="eyebrow">Paired demos</span>
-            <h2>Human interaction in. Robot embodiment out.</h2>
-            <p>Synchronized examples show how the same egocentric interaction is translated across standalone dexterous hands and full hand-arm embodiments.</p>
+            <p class="section-kicker">Embodiment Transfer</p>
+            <h2>One interaction, multiple robot hands</h2>
+            <p>Eight synchronized keyframes reveal how the same human manipulation is translated across three distinct target embodiments.</p>
           </div>
-          <div class="segmented" role="tablist" aria-label="Filter demos">
-            <button class="segment active" type="button" data-demo-filter="all" aria-selected="true">All</button>
-            <button class="segment" type="button" data-demo-filter="hand-only" aria-selected="false">Hand-only</button>
-            <button class="segment" type="button" data-demo-filter="hand-arm" aria-selected="false">Hand-Arm</button>
-          </div>
+          <span aria-hidden="true"></span>
+        </header>
+
+        <div class="transfer-tabs" role="tablist" aria-label="Select an interaction sequence">
+          <button class="transfer-tab active" id="tab-cut" type="button" role="tab" data-transfer-task="cut" aria-controls="transfer-panel" aria-selected="true">Cut</button>
+          <button class="transfer-tab" id="tab-pour" type="button" role="tab" data-transfer-task="pour" aria-controls="transfer-panel" aria-selected="false">Pour</button>
+          <button class="transfer-tab" id="tab-place" type="button" role="tab" data-transfer-task="place" aria-controls="transfer-panel" aria-selected="false">Place</button>
+          <button class="transfer-tab" id="tab-mixer" type="button" role="tab" data-transfer-task="mixer" aria-controls="transfer-panel" aria-selected="false">Mixer</button>
+          <button class="transfer-tab" id="tab-box" type="button" role="tab" data-transfer-task="box" aria-controls="transfer-panel" aria-selected="false">Box</button>
         </div>
 
-        <div class="demo-list">
-          <article class="demo-pair" data-demo-scope="hand-only">
-            <div class="demo-meta"><span>Demo 01</span><strong>Laptop manipulation</strong><em>Hand-only</em></div>
-            <div class="pair-stage" data-video-pair>
-              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-01-source.webp" data-src="assets/videos/demo-01-source.mp4" aria-label="Human laptop manipulation"></video></figure>
-              <div class="pair-arrow" aria-hidden="true">→</div>
-              <figure class="video-cell"><span class="video-label robot">Allegro Hand</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-01-robot.webp" data-src="assets/videos/demo-01-robot.mp4" aria-label="Allegro hand laptop manipulation"></video></figure>
-            </div>
-          </article>
-          <article class="demo-pair" data-demo-scope="hand-only">
-            <div class="demo-meta"><span>Demo 02</span><strong>Apple grasp</strong><em>Hand-only</em></div>
-            <div class="pair-stage" data-video-pair>
-              <figure class="video-cell"><span class="video-label human">Human Interaction</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-02-source.webp" data-src="assets/videos/demo-02-source.mp4" aria-label="Human apple grasp"></video></figure>
-              <div class="pair-arrow" aria-hidden="true">→</div>
-              <figure class="video-cell"><span class="video-label robot">Ability Hand</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-02-robot.webp" data-src="assets/videos/demo-02-robot.mp4" aria-label="Ability hand apple grasp"></video></figure>
-            </div>
-          </article>
-          <article class="demo-pair" data-demo-scope="hand-arm">
-            <div class="demo-meta"><span>Demo 03</span><strong>Mixer grasp</strong><em>Hand-Arm</em></div>
-            <div class="pair-stage" data-video-pair>
-              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-03-source.webp" data-src="assets/videos/demo-03-source.mp4" aria-label="Human mixer grasp"></video></figure>
-              <div class="pair-arrow" aria-hidden="true">→</div>
-              <figure class="video-cell"><span class="video-label robot">Jaka + DexHand021</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-03-robot.webp" data-src="assets/videos/demo-03-robot.mp4" aria-label="Jaka arm and DexHand021 mixer grasp"></video></figure>
-            </div>
-          </article>
-          <article class="demo-pair" data-demo-scope="hand-arm">
-            <div class="demo-meta"><span>Demo 04</span><strong>Articulated box</strong><em>Hand-Arm</em></div>
-            <div class="pair-stage" data-video-pair>
-              <figure class="video-cell"><span class="video-label human">Egocentric Human</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-04-source.webp" data-src="assets/videos/demo-04-source.mp4" aria-label="Human articulated box interaction"></video></figure>
-              <div class="pair-arrow" aria-hidden="true">→</div>
-              <figure class="video-cell"><span class="video-label robot">iiwa7 + Sharpa</span><video muted loop playsinline preload="metadata" poster="assets/demo/demo-04-robot.webp" data-src="assets/videos/demo-04-robot.mp4" aria-label="iiwa7 arm and Sharpa hand articulated box interaction"></video></figure>
-            </div>
-          </article>
+        <div class="transfer-context">
+          <div>
+            <span>Selected sequence</span>
+            <h3 id="transfer-title">Apple cutting</h3>
+          </div>
+          <p id="transfer-description">Tool use and bimanual contact across three dexterous hand embodiments.</p>
         </div>
+
+        <div class="transfer-board" id="transfer-panel" role="tabpanel" aria-labelledby="tab-cut">
+          <div class="transfer-scroll" tabindex="0" aria-label="Synchronized human and robot keyframes; scroll horizontally on smaller screens">
+            <div class="transfer-grid" id="transfer-grid" aria-live="polite"></div>
+          </div>
+        </div>
+        <p class="transfer-caption">Human input is shown in the first row. Each subsequent row uses the identical timestamps for a different robot embodiment. Select any frame to enlarge it.</p>
       </div>
     </section>
 
-    <section class="section shell" id="dataset">
-      <div class="section-heading centered narrow">
-        <span class="eyebrow">HandEdit Dataset</span>
-        <h2>Scale, diversity, and cross-embodiment coverage</h2>
-        <p>HandEdit is built from the egocentric portions of EgoDex, ARCTIC, OakInk2, HOI4D, and HO-Cap, spanning 600+ scenes, 1.1K+ objects, and 400+ tasks.</p>
-      </div>
+    <section class="section dataset-section shell" id="dataset">
+      <header class="paper-heading with-subtitle">
+        <span aria-hidden="true"></span>
+        <div>
+          <p class="section-kicker">Dataset</p>
+          <h2>Scale and cross-embodiment coverage</h2>
+          <p>Five egocentric manipulation sources are unified under a single embodiment-aware editing protocol.</p>
+        </div>
+        <span aria-hidden="true"></span>
+      </header>
 
-      <div class="dataset-feature-grid">
-        <figure class="figure card-figure">
-          <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig3-data-composition.webp"><img src="assets/figures/fig3-data-composition.webp" alt="HandEdit dataset composition chart" loading="lazy" /></button>
-          <figcaption>Dataset composition across the five egocentric sources.</figcaption>
+      <div class="dataset-layout">
+        <figure class="paper-figure dataset-figure">
+          <button class="figure-button" type="button" data-lightbox="assets/figures/fig3-data-composition.webp" aria-label="Open dataset composition figure">
+            <img src="assets/figures/fig3-data-composition.webp" alt="HandEdit dataset composition across five egocentric sources" loading="lazy">
+          </button>
+          <figcaption><strong>Dataset composition.</strong> Frame-level coverage from the five source datasets.</figcaption>
         </figure>
-        <div class="source-cards">
-          <article><strong>EgoDex</strong><span>90M frames</span><p>338K clips · 500 household objects · 194 tasks</p></article>
-          <article><strong>ARCTIC</strong><span>2.1M frames</span><p>Articulated objects · tool-use and grasp</p></article>
-          <article><strong>OakInk2</strong><span>4.01M frames</span><p>75 objects · 150 tasks</p></article>
-          <article><strong>HOI4D</strong><span>2.4M frames</span><p>Room-scale diversity · 54 tasks</p></article>
-          <article><strong>HO-Cap</strong><span>656K frames</span><p>Pick-place · handover · tool-use</p></article>
+
+        <div class="dataset-ledger" aria-label="Source dataset summary">
+          <article><div><strong>EgoDex</strong><span>90M frames</span></div><p>338K clips &middot; 500 household objects &middot; 194 tasks</p></article>
+          <article><div><strong>ARCTIC</strong><span>2.1M frames</span></div><p>Articulated objects &middot; tool use &middot; grasping</p></article>
+          <article><div><strong>OakInk2</strong><span>4.01M frames</span></div><p>75 objects &middot; 150 tasks</p></article>
+          <article><div><strong>HOI4D</strong><span>2.4M frames</span></div><p>Room-scale diversity &middot; 54 tasks</p></article>
+          <article><div><strong>HO-Cap</strong><span>656K frames</span></div><p>Pick-and-place &middot; handover &middot; tool use</p></article>
         </div>
       </div>
 
-      <figure class="figure wide coverage-figure">
-        <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig8-coverage-wordcloud.webp"><img src="assets/figures/fig8-coverage-wordcloud.webp" alt="Representative robot hand and hand-arm examples with object and verb word clouds" loading="lazy" /></button>
-        <figcaption>Representative embodiment edits alongside the interaction vocabulary represented in the source data.</figcaption>
+      <figure class="paper-figure coverage-figure">
+        <button class="figure-button" type="button" data-lightbox="assets/figures/fig8-coverage-wordcloud.webp" aria-label="Open embodiment and task coverage figure">
+          <img src="assets/figures/fig8-coverage-wordcloud.webp" alt="Representative robot embodiments with object and interaction coverage" loading="lazy">
+        </button>
+        <figcaption><strong>Coverage.</strong> Representative target embodiments and the interaction vocabulary present in the source data.</figcaption>
       </figure>
     </section>
 
     <section class="section embodiment-section" id="embodiments">
       <div class="shell">
-        <div class="section-heading split">
-          <div><span class="eyebrow">Embodiment explorer</span><h2>26 target URDF embodiments</h2><p>Browse the canonical renders supplied with the benchmark. Every image below comes from the uploaded project assets.</p></div>
-          <div class="segmented" role="tablist" aria-label="Embodiment group">
-            <button class="segment embodiment-tab active" type="button" data-embodiment="hand-only" aria-selected="true">13 Hand-only</button>
-            <button class="segment embodiment-tab" type="button" data-embodiment="hand-arm" aria-selected="false">13 Hand-Arm</button>
+        <header class="paper-heading with-subtitle">
+          <span aria-hidden="true"></span>
+          <div>
+            <p class="section-kicker">Embodiments</p>
+            <h2>26 target URDF embodiments</h2>
+            <p>Thirteen standalone dexterous hands and thirteen full hand-arm configurations span diverse kinematics and morphology.</p>
           </div>
+          <span aria-hidden="true"></span>
+        </header>
+
+        <div class="control-row" role="tablist" aria-label="Embodiment group">
+          <button class="control-tab embodiment-tab active" type="button" data-embodiment="hand-only" aria-selected="true">Hand-only <span>13</span></button>
+          <button class="control-tab embodiment-tab" type="button" data-embodiment="hand-arm" aria-selected="false">Hand-Arm <span>13</span></button>
         </div>
         <div class="embodiment-grid" id="embodiment-grid" aria-live="polite"></div>
       </div>
     </section>
 
-    <section class="section shell" id="pipeline">
-      <div class="section-heading centered narrow">
-        <span class="eyebrow">Data curation pipeline</span>
-        <h2>Kinematically grounded pseudo-GT construction</h2>
-        <p>The pipeline segments the human region, restores the background, retargets source motion to the target URDF, solves arm IK when needed, renders from the egocentric camera, and composites the robot foreground back into the scene.</p>
-      </div>
-      <figure class="figure wide showcase-figure">
-        <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig2-data-pipeline.webp"><img src="assets/figures/fig2-data-pipeline.webp" alt="HandEdit data curation pipeline" loading="lazy" /></button>
-        <figcaption>Data Curation Pipeline: segmentation, inpainting, motion retargeting, robot rendering, and compositing.</figcaption>
-      </figure>
-    </section>
-
-    <section class="section benchmark-section" id="benchmark">
-      <div class="shell">
-        <div class="section-heading centered narrow">
-          <span class="eyebrow">HandEdit Benchmark</span>
-          <h2>Two tracks. Three evaluation layers.</h2>
-          <p>Hand-only focuses on local dexterous replacement. Hand-Arm expands the edited region and raises the bar for background preservation, plausible arm kinematics, and coherent scene composition.</p>
+    <section class="section results-section shell-wide" id="results">
+      <header class="paper-heading with-subtitle">
+        <span aria-hidden="true"></span>
+        <div>
+          <p class="section-kicker">Benchmark Results</p>
+          <h2>Current editors remain far from solved</h2>
+          <p>Generic image quality is not enough: morphology, viewpoint, contact, and object state must remain jointly coherent.</p>
         </div>
+        <span aria-hidden="true"></span>
+      </header>
 
-        <div class="track-cards">
-          <article><div class="track-index">01</div><span>13 target embodiments</span><h3>Hand-only</h3><p>Replace the local human hand region with a requested standalone dexterous hand while preserving contact and object state.</p></article>
-          <article><div class="track-index">02</div><span>13 target embodiments</span><h3>Hand-Arm</h3><p>Replace the hand plus visible forearm/full arm, requiring larger-region consistency and plausible arm geometry.</p></article>
-        </div>
-
-        <div class="metric-layers">
-          <article><span>Layer 1</span><h3>Generic Similarity</h3><p>PSNR · SSIM · LPIPS · FID across full image, ROI, and background.</p></article>
-          <article><span>Layer 2</span><h3>VLM Judgment</h3><p>Semantic Consistency (SC) and Perceptual Quality (PQ).</p></article>
-          <article><span>Layer 3</span><h3>Embodiment-Aware</h3><p>Human-hand Removal · Structural Fidelity · ID Fidelity · Interaction.</p></article>
-        </div>
-
-        <div class="figure-stack">
-          <figure class="figure wide">
-            <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig4-failure-modes.webp"><img src="assets/figures/fig4-failure-modes.webp" alt="Common failure modes of existing URDF-conditioned image editors" loading="lazy" /></button>
-            <figcaption>Common failure modes: residual human artifacts, embodiment mismatch, interaction failure, incorrect viewpoint, and background inconsistency.</figcaption>
-          </figure>
-          <figure class="figure medium">
-            <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig5-vlm-metric.webp"><img src="assets/figures/fig5-vlm-metric.webp" alt="VLM-based judgment protocol with semantic consistency and perceptual quality" loading="lazy" /></button>
-            <figcaption>VLM-based judgment decomposes semantic consistency and perceptual quality rather than collapsing them into one opaque score.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" id="results">
-      <div class="section-heading split results-heading">
-        <div><span class="eyebrow">Benchmark results</span><h2>Current editors remain far from solved</h2><p>Eleven representative commercial and open-source editors are evaluated under their native conditioning interfaces. The table below surfaces the metrics most directly tied to local edit quality and embodiment correctness.</p></div>
-        <div class="segmented" role="tablist" aria-label="Leaderboard track">
-          <button class="segment leaderboard-tab active" type="button" data-track="hand-only" aria-selected="true">Hand-only</button>
-          <button class="segment leaderboard-tab" type="button" data-track="hand-arm" aria-selected="false">Hand-Arm</button>
-        </div>
+      <div class="control-row" role="tablist" aria-label="Leaderboard track">
+        <button class="control-tab leaderboard-tab active" type="button" data-track="hand-only" aria-selected="true">Hand-only</button>
+        <button class="control-tab leaderboard-tab" type="button" data-track="hand-arm" aria-selected="false">Hand-Arm</button>
       </div>
 
-      <div class="table-frame">
+      <div class="table-frame" tabindex="0" aria-label="Leaderboard table; scroll horizontally on smaller screens">
         <table id="leaderboard-table">
-          <thead><tr><th>Model</th><th>Access</th><th>LPIPS ROI ↓</th><th>FID ROI ↓</th><th>Removal ↑</th><th>Struct ↑</th><th>ID ↑</th><th>Interaction ↑</th><th>VLM ↑</th></tr></thead>
+          <thead>
+            <tr><th>Model</th><th>Access</th><th>LPIPS ROI &darr;</th><th>FID ROI &darr;</th><th>Removal &uarr;</th><th>Struct &uarr;</th><th>ID &uarr;</th><th>Interaction &uarr;</th><th>VLM &uarr;</th></tr>
+          </thead>
           <tbody></tbody>
         </table>
       </div>
-      <p class="table-note">Best values are highlighted in blue; second-best values are softly underlined. Full metric breakdowns are reported in the paper.</p>
+      <p class="table-note">Best values are highlighted; second-best values are underlined. Full metric definitions and breakdowns are reported in the paper.</p>
 
-      <figure class="figure wide radar-figure">
-        <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/fig7-radar-results.webp"><img src="assets/figures/fig7-radar-results.webp" alt="Radar plots comparing image editors on Hand-only and Hand-Arm metrics" loading="lazy" /></button>
-        <figcaption>Multi-axis comparison reveals different failure profiles across Hand-only and Hand-Arm editing.</figcaption>
+      <figure class="paper-figure radar-figure">
+        <button class="figure-button" type="button" data-lightbox="assets/figures/fig7-radar-results.webp" aria-label="Open radar comparison figure">
+          <img src="assets/figures/fig7-radar-results.webp" alt="Radar plots comparing image editors on Hand-only and Hand-Arm metrics" loading="lazy">
+        </button>
+        <figcaption><strong>Multi-axis comparison.</strong> Editors exhibit distinct failure profiles across the two benchmark tracks.</figcaption>
       </figure>
 
-      <div class="finding-grid">
-        <article><span>Finding 01</span><h3>GPT-Image-2 is the strongest overall baseline</h3><p>It combines strong local image quality with leading structural fidelity and interaction preservation.</p></article>
-        <article><span>Finding 02</span><h3>VLM judgment is useful, but not sufficient</h3><p>A high semantic/perceptual score does not guarantee fine-grained robot morphology or contact fidelity.</p></article>
-        <article><span>Finding 03</span><h3>Embodiment-aware editing is the real bottleneck</h3><p>Removal is comparatively easier; identity, structure, viewpoint, and interaction remain challenging.</p></article>
+      <div class="finding-list" aria-label="Main findings">
+        <article><span>01</span><div><h3>Overall quality and embodiment fidelity do not always agree.</h3><p>Strong perceptual scores can coexist with incorrect robot identity, geometry, or contact.</p></div></article>
+        <article><span>02</span><div><h3>Hand-Arm editing raises the difficulty substantially.</h3><p>Larger edited regions amplify errors in kinematics, viewpoint, composition, and background preservation.</p></div></article>
+        <article><span>03</span><div><h3>Interaction preservation remains the central bottleneck.</h3><p>Removing the human hand is comparatively easier than maintaining plausible task-level contact.</p></div></article>
       </div>
     </section>
 
     <section class="section qualitative-section" id="qualitative">
-      <div class="shell">
-        <div class="section-heading split">
-          <div><span class="eyebrow">Qualitative comparison</span><h2>See where current editors succeed—and fail</h2><p>Use the tabs to inspect the supplied comparison panels. Figures are always rendered at their natural aspect ratio, never cropped.</p></div>
-          <div class="segmented" role="tablist" aria-label="Qualitative comparison panel">
-            <button class="segment qualitative-tab active" type="button" data-panel="hand-arm" aria-selected="true">Hand / Hand-Arm</button>
-            <button class="segment qualitative-tab" type="button" data-panel="hand-only" aria-selected="false">Alternative Panel</button>
+      <div class="shell-wide">
+        <header class="paper-heading with-subtitle">
+          <span aria-hidden="true"></span>
+          <div>
+            <p class="section-kicker">Qualitative Comparison</p>
+            <h2>Where current editors succeed and fail</h2>
+            <p>Inspect representative outputs at their native aspect ratio, without decorative cropping.</p>
           </div>
+          <span aria-hidden="true"></span>
+        </header>
+
+        <div class="control-row" role="tablist" aria-label="Qualitative comparison panel">
+          <button class="control-tab qualitative-tab active" type="button" data-panel="hand-arm" aria-selected="true">Hand / Hand-Arm</button>
+          <button class="control-tab qualitative-tab" type="button" data-panel="hand-only" aria-selected="false">Alternative panel</button>
         </div>
-        <div class="qualitative-panel" id="qualitative-panel">
-          <figure class="figure comparison-figure">
-            <button class="lightbox-trigger" type="button" data-lightbox="assets/figures/qualitative-hand-arm.webp"><img id="qualitative-image" src="assets/figures/qualitative-hand-arm.webp" alt="Qualitative comparison across commercial and open-source editors" loading="lazy" /></button>
-            <figcaption id="qualitative-caption">Representative human inputs and edited outputs across commercial API-based and open-source image editors.</figcaption>
-          </figure>
-        </div>
+        <figure class="paper-figure comparison-figure">
+          <button class="figure-button" type="button" data-lightbox="assets/figures/qualitative-hand-arm.webp" aria-label="Open qualitative comparison">
+            <img id="qualitative-image" src="assets/figures/qualitative-hand-arm.webp" alt="Qualitative comparison across commercial and open-source editors" loading="lazy">
+          </button>
+          <figcaption id="qualitative-caption"><strong>Qualitative comparison.</strong> Human inputs and edited outputs from representative commercial and open-source editors.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section shell release-section" id="release">
+    <section class="section release-section shell" id="release">
       <div class="release-card">
-        <div><span class="eyebrow">Anonymous release</span><h2>Dataset, benchmark, and code</h2><p>The anonymous repository hosts the current project materials for review. Public-facing author and affiliation information can be added after the review process.</p></div>
-        <a class="resource-button primary large" href="https://anonymous.4open.science/r/HandEdit/README.md" target="_blank" rel="noreferrer">Open Anonymous Repository <span aria-hidden="true">↗</span></a>
+        <div>
+          <p class="section-kicker">Anonymous Release</p>
+          <h2>Dataset, benchmark, and code</h2>
+          <p>The anonymous repository contains the current project materials for review. Public author and affiliation details can be added after the review period.</p>
+        </div>
+        <a class="text-link" href="https://anonymous.4open.science/r/HandEdit/README.md" target="_blank" rel="noreferrer">Open anonymous repository <span aria-hidden="true">&nearr;</span></a>
       </div>
     </section>
 
     <section class="citation-section" id="citation">
-      <div class="shell citation-grid">
-        <div><span class="eyebrow light">Citation</span><h2>Cite HandEdit</h2><p>Update the anonymous BibTeX entry after acceptance or public release.</p></div>
+      <div class="shell citation-layout">
+        <div>
+          <p class="section-kicker">Citation</p>
+          <h2>Cite HandEdit</h2>
+          <p>Replace the anonymous entry after public release.</p>
+        </div>
         <div class="citation-box">
           <div class="citation-toolbar"><span>BibTeX</span><button id="copy-citation" type="button">Copy</button></div>
           <pre id="citation-text">@inproceedings{anonymous2026handedit,
@@ -313,11 +282,13 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="shell"><span>HandEdit · NeurIPS 2026 Submission</span><span>Anonymous review mode</span></div></footer>
+  <footer class="footer">
+    <div class="shell"><span>HandEdit &middot; NeurIPS 2026 Submission</span><span>Anonymous review mode</span></div>
+  </footer>
 
   <dialog class="lightbox" id="lightbox" aria-label="Expanded figure">
-    <button class="lightbox-close" type="button" aria-label="Close">×</button>
-    <img alt="Expanded project figure" />
+    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+    <img alt="Expanded project figure">
   </dialog>
 
   <script src="assets/main.js" defer></script>

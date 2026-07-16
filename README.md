@@ -1,76 +1,61 @@
-# HandEdit 
+# HandEdit project page
 
-This static website is redesigned from the latest `HandEdit_NeurIPS_2026.pdf` manuscript and follows the clean academic project-page rhythm of ManipTrans while adding benchmark-specific components.
+Academic project website for **HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing**.
 
-## What changed from Version 1
+## Local preview
 
-- Updated title to **HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing**.
-- Updated headline statistics to **200M+ edits, 300K+ clips, 26 embodiments, 600+ scenes, 1.1K+ objects, 400+ tasks**.
-- Updated benchmark structure to the manuscript's current **Hand-only** and **Hand-Arm** tracks.
-- Updated baseline count to **11 representative editors**.
-- Added real benchmark values from the latest manuscript Tables 3-6.
-- Added actual manuscript figures for overview, data curation, failure modes, and VLM-based judgment.
-- Added paired demo cards: source human video on the left, retargeted robot or robot-arm video on the right.
-- Added demo filtering, responsive paired video layout, automatic visible-video playback, figure lightbox, and best/second-best result highlighting.
-- Refined the typography and page rhythm against leading robotics project pages, with a restrained 16px type scale, a more compact hero, wider media canvas, and denser benchmark sections.
-- Added four optimized real demo pairs (about 11 MB total) and matching poster frames for fast GitHub Pages delivery.
-
-## Preview locally
-
-From this directory:
+Serve the repository root over HTTP so that videos and browser features behave as they will on GitHub Pages:
 
 ```bash
-python -m http.server 8080
+python -m http.server 8000
 ```
 
-Open:
+Then open `http://localhost:8000/`.
+
+## Teaser video
+
+The hero is already implemented as a video player. Add or replace:
 
 ```text
-http://localhost:8080/
+assets/videos/teaser.mp4
 ```
 
-Do not open `index.html` directly with `file://` if you want the JSON leaderboard to load; use a local HTTP server.
+The page keeps `assets/figures/fig1-teaser.webp` as its poster and Open Graph image. No HTML or CSS change is required when the final MP4 is added.
 
-## Demo videos
+Recommended format: MP4/H.264, 16:9, 1920x1080, web-optimized fast start. If narration carries essential information, add a captions track before public release.
 
-The website ships with four lightweight source/robot pairs in `assets/videos/`:
+## Embodiment-transfer keyframes
+
+The transfer matrix uses five strictly curated scenes. Each scene contains one Human row and three synchronized robot rows, with eight frames per row:
 
 ```text
-demo-01-source.mp4
-demo-01-robot.mp4
-demo-02-source.mp4
-demo-02-robot.mp4
-demo-03-source.mp4
-demo-03-robot.mp4
-demo-04-source.mp4
-demo-04-robot.mp4
+assets/transfer/
+  cut/
+  pour/
+  place/
+  mixer/
+  box/
 ```
 
-The page automatically loads them when the cards enter the viewport. Matching WebP poster images in `assets/demo/` remain visible while media loads.
+Frame files follow `assets/transfer/<task>/<embodiment>/01.webp ... 08.webp`. The accompanying `assets/transfer/manifest.json` records titles, row labels, and aspect ratios.
 
-To replace a pair, keep the same filenames and encode web-ready H.264 MP4 files with `faststart` enabled. To add more pairs, duplicate one `.demo-pair` block in `index.html`, update the filenames and `data-demo-scope`, then add the new videos.
+## Main files
 
-## Result data
+- `index.html` — semantic page structure and paper content
+- `assets/style.css` — academic visual system and responsive layout
+- `assets/main.js` — transfer matrix, embodiment explorer, leaderboard, tabs, lightbox, and navigation
+- `assets/figures/` — paper figures and teaser poster
+- `assets/renders/` — canonical hand and hand-arm renders
+- `assets/transfer/` — optimized synchronized keyframes
 
-Edit:
+## Release checklist
 
-```text
-data/leaderboard.json
-```
+Before the public release:
 
-The JavaScript automatically highlights best and second-best values by metric direction.
+1. Replace anonymous author, affiliation, repository, and BibTeX details.
+2. Remove `noindex,nofollow,noarchive` from `index.html`.
+3. Add canonical, `og:url`, and social card metadata.
+4. Add the final teaser video and captions if needed.
+5. Confirm all reported values against the camera-ready paper.
 
-## Anonymous deployment checklist
-
-Before deploying during double-blind review:
-
-- Use a domain/repository that does not reveal author or lab identity.
-- Keep authors and affiliation anonymous.
-- Remove identifying Git commit names/emails from any published repository history.
-- Strip EXIF and video metadata from new media.
-- Do not add analytics, tracking IDs, university logos, personal links, or identifiable cloud project names.
-- Re-check the current NeurIPS policy before making a paper link public.
-
-## GitHub Pages
-
-For a simple static repository, upload the folder contents to the anonymous deployment repository and publish the root directory with GitHub Pages or another static host.
+GitHub Pages serves the repository as a static site; `.nojekyll` is included so assets are published without Jekyll processing.

@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "cut",
+    "title": "Cut",
+    "fullTitle": "Apple cutting",
+    "description": "Tool use and bimanual contact across three dexterous hand embodiments.",
+    "aspectRatio": 1.7647,
+    "rows": [
+      {
+        "key": "human",
+        "label": "Human",
+        "kind": "human"
+      },
+      {
+        "key": "ability",
+        "label": "Ability",
+        "kind": "robot"
+      },
+      {
+        "key": "shadow",
+        "label": "Shadow",
+        "kind": "robot"
+      },
+      {
+        "key": "svh",
+        "label": "SVH",
+        "kind": "robot"
+      }
+    ],
+    "frames": 8
+  },
+  {
+    "slug": "pour",
+    "title": "Pour",
+    "fullTitle": "Pouring and weighing",
+    "description": "A synchronized progression from reach and grasp to controlled pouring.",
+    "aspectRatio": 1.7647,
+    "rows": [
+      {
+        "key": "human",
+        "label": "Human",
+        "kind": "human"
+      },
+      {
+        "key": "ability",
+        "label": "Ability",
+        "kind": "robot"
+      },
+      {
+        "key": "allegro",
+        "label": "Allegro",
+        "kind": "robot"
+      },
+      {
+        "key": "shadow",
+        "label": "Shadow",
+        "kind": "robot"
+      }
+    ],
+    "frames": 8
+  },
+  {
+    "slug": "place",
+    "title": "Place",
+    "fullTitle": "Lift and place",
+    "description": "Grasp, lift, transport, and placement under distinct hand morphologies.",
+    "aspectRatio": 1.7647,
+    "rows": [
+      {
+        "key": "human",
+        "label": "Human",
+        "kind": "human"
+      },
+      {
+        "key": "allegro",
+        "label": "Allegro",
+        "kind": "robot"
+      },
+      {
+        "key": "inspire",
+        "label": "Inspire",
+        "kind": "robot"
+      },
+      {
+        "key": "sharpa",
+        "label": "Sharpa",
+        "kind": "robot"
+      }
+    ],
+    "frames": 8
+  },
+  {
+    "slug": "mixer",
+    "title": "Mixer",
+    "fullTitle": "Mixer manipulation",
+    "description": "Late-stage synchronized frames with both standalone and full hand-arm targets.",
+    "aspectRatio": 1.399,
+    "rows": [
+      {
+        "key": "human",
+        "label": "Human",
+        "kind": "human"
+      },
+      {
+        "key": "ability",
+        "label": "Ability",
+        "kind": "robot"
+      },
+      {
+        "key": "dexhand021_jaka",
+        "label": "DexHand021 + Jaka",
+        "kind": "robot"
+      },
+      {
+        "key": "rh56dfx_ur5",
+        "label": "RH56DFX + UR5",
+        "kind": "robot"
+      }
+    ],
+    "frames": 8
+  },
+  {
+    "slug": "box",
+    "title": "Box",
+    "fullTitle": "Articulated box",
+    "description": "Approach, contact, opening, and manipulation of an articulated object.",
+    "aspectRatio": 1.399,
+    "rows": [
+      {
+        "key": "human",
+        "label": "Human",
+        "kind": "human"
+      },
+      {
+        "key": "dexhand021_jaka",
+        "label": "DexHand021 + Jaka",
+        "kind": "robot"
+      },
+      {
+        "key": "rh56dfx_ur5",
+        "label": "RH56DFX + UR5",
+        "kind": "robot"
+      },
+      {
+        "key": "sharpa_iiwa7",
+        "label": "Sharpa + iiwa7",
+        "kind": "robot"
+      }
+    ],
+    "frames": 8
+  }
+]
