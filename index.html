@@ -9,10 +9,10 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="HandEdit: Egocentric Human-to-Robot Dexterous Hand Image Editing">
   <meta property="og:description" content="A large-scale, embodiment-aware dataset and benchmark for dexterous robot hand image editing.">
-  <meta property="og:image" content="https://jiaonb.github.io/handedit/assets/figures/fig1-teaser.webp">
+  <meta property="og:image" content="https://jiaonb.github.io/handedit/assets/videos/teaser-poster.jpg">
   <title>HandEdit | Egocentric Human-to-Robot Dexterous Hand Image Editing</title>
   <link rel="icon" href="assets/handedit-mark.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/figures/fig1-teaser.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/videos/teaser-poster.jpg" as="image" type="image/jpeg">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -68,17 +68,14 @@
       </div>
 
       <figure class="teaser-figure">
-        <div class="teaser-media">
-          <video id="teaser-video" controls muted loop playsinline preload="metadata" poster="assets/figures/fig1-teaser.webp" aria-label="HandEdit teaser video">
+        <div class="teaser-media" id="teaser-player">
+          <video id="teaser-video" controls loop playsinline preload="metadata" poster="assets/videos/teaser-poster.jpg" aria-label="HandEdit project teaser" aria-describedby="teaser-caption">
             <source src="assets/videos/teaser.mp4" type="video/mp4">
             Your browser does not support HTML video.
           </video>
-          <div class="teaser-placeholder" id="teaser-placeholder" aria-hidden="true">
-            <span>Teaser video</span>
-            <small>Project overview</small>
-          </div>
+          <button class="teaser-play" id="teaser-play" type="button" aria-label="Play the HandEdit project teaser"></button>
         </div>
-        <figcaption><strong>Figure 1.</strong> HandEdit turns egocentric human interaction into robot-centric visual experience under diverse dexterous embodiments.</figcaption>
+        <figcaption id="teaser-caption"><strong>Figure 1.</strong> HandEdit turns egocentric human interaction into robot-centric visual experience under diverse dexterous embodiments.</figcaption>
       </figure>
     </section>
 

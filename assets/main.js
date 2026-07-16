@@ -249,13 +249,38 @@ initializeTabGroup({
   onSelect: renderQualitative
 });
 
-// Teaser video: the poster remains visible until assets/videos/teaser.mp4 is supplied.
+// Teaser video: keep the supplied poster and play treatment while retaining native controls.
+const teaserPlayer = document.querySelector("#teaser-player");
 const teaserVideo = document.querySelector("#teaser-video");
-const teaserPlaceholder = document.querySelector("#teaser-placeholder");
-if (teaserVideo && teaserPlaceholder) {
-  const hidePlaceholder = () => { teaserPlaceholder.hidden = true; };
-  teaserVideo.addEventListener("loadeddata", hidePlaceholder, { once: true });
-  teaserVideo.addEventListener("canplay", hidePlaceholder, { once: true });
+const teaserPlay = document.querySelector("#teaser-play");
+if (teaserPlayer && teaserVideo && teaserPlay) {
+  const setPlayingState = (isPlaying) => {
+    teaserPlayer.classList.toggle("is-playing", isPlaying);
+    teaserPlay.setAttribute("aria-label", isPlaying
+      ? "Pause the HandEdit project teaser"
+      : "Play the HandEdit project teaser");
+  };
+
+  teaserPlay.addEventListener("click", async () => {
+    if (!teaserVideo.paused) {
+      teaserVideo.pause();
+      return;
+    }
+
+    try {
+      await teaserVideo.play();
+    } catch (error) {
+      setPlayingState(false);
+      console.warn("The teaser video could not start.", error);
+    }
+  });
+
+  teaserVideo.addEventListener("play", () => setPlayingState(true));
+  teaserVideo.addEventListener("pause", () => setPlayingState(false));
+  teaserVideo.addEventListener("ended", () => setPlayingState(false));
+  teaserVideo.addEventListener("error", () => {
+    teaserPlayer.classList.add("is-unavailable");
+  });
 }
 
 // Event-delegated image lightbox supports both static and dynamically rendered figures.
