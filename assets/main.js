@@ -91,31 +91,26 @@ function renderEmbodiments(group) {
 const transferTasks = {
   cut: {
     title: "Apple cutting",
-    description: "Tool use and bimanual contact across three dexterous hand embodiments.",
     aspect: 1.7647,
     rows: [["human", "Human", "human"], ["ability", "Ability", "robot"], ["shadow", "Shadow", "robot"], ["svh", "SVH", "robot"]]
   },
   pour: {
     title: "Pouring and weighing",
-    description: "A synchronized progression from reach and grasp to controlled pouring.",
     aspect: 1.7647,
     rows: [["human", "Human", "human"], ["ability", "Ability", "robot"], ["allegro", "Allegro", "robot"], ["shadow", "Shadow", "robot"]]
   },
   place: {
     title: "Lift and place",
-    description: "Grasp, lift, transport, and placement under distinct hand morphologies.",
     aspect: 1.7647,
     rows: [["human", "Human", "human"], ["allegro", "Allegro", "robot"], ["inspire", "Inspire", "robot"], ["sharpa", "Sharpa", "robot"]]
   },
   mixer: {
     title: "Mixer manipulation",
-    description: "Late-stage synchronized frames with both standalone and full hand-arm targets.",
     aspect: 1.3989,
     rows: [["human", "Human", "human"], ["ability", "Ability", "robot"], ["dexhand021_jaka", "DexHand021 + Jaka", "robot"], ["rh56dfx_ur5", "RH56DFX + UR5", "robot"]]
   },
   box: {
     title: "Articulated box",
-    description: "Approach, contact, opening, and manipulation of an articulated object.",
     aspect: 1.3989,
     rows: [["human", "Human", "human"], ["dexhand021_jaka", "DexHand021 + Jaka", "robot"], ["rh56dfx_ur5", "RH56DFX + UR5", "robot"], ["sharpa_iiwa7", "Sharpa + iiwa7", "robot"]]
   }
@@ -125,7 +120,6 @@ function renderTransferGrid(taskKey) {
   const task = transferTasks[taskKey];
   const grid = document.querySelector("#transfer-grid");
   const title = document.querySelector("#transfer-title");
-  const description = document.querySelector("#transfer-description");
   const header = ["<span class=\"transfer-corner\" aria-hidden=\"true\"></span>"];
 
   for (let frame = 1; frame <= 8; frame += 1) {
@@ -148,7 +142,6 @@ function renderTransferGrid(taskKey) {
   grid.style.setProperty("--frame-aspect", String(task.aspect));
   grid.innerHTML = [...header, ...rows].join("");
   title.textContent = task.title;
-  description.textContent = task.description;
 }
 
 function initializeTabGroup({ selector, panel, dataAttribute, onSelect }) {
