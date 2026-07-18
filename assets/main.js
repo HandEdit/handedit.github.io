@@ -88,7 +88,7 @@ function renderEmbodiments(group) {
   }).join("");
 }
 
-const transferAssetRevision = "20260718-2";
+const transferAssetRevision = "20260718-3";
 
 const transferTasks = {
   cut: {
@@ -119,7 +119,7 @@ const transferTasks = {
   tongs: {
     title: "Wooden tongs transfer",
     aspect: 1.7647,
-    rows: [["human", "Human", "human"], ["rh56dfx", "RH56DFX", "robot"], ["orcahand", "OrcaHand", "robot"], ["shadow", "Shadow", "robot"]]
+    rows: [["human", "Human", "human"], ["rh56dfx", "RH56DFX", "robot"], ["rh5dg2", "RH5DG2", "robot"], ["shadow", "Shadow", "robot"]]
   }
 };
 
