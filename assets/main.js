@@ -109,10 +109,15 @@ const transferTasks = {
     aspect: 1.3989,
     rows: [["human", "Human", "human"], ["ability", "Ability", "robot"], ["dexhand021_jaka", "DexHand021", "robot"], ["rh56dfx_ur5", "RH56DFX", "robot"]]
   },
-  box: {
-    title: "Articulated box",
+  laptop: {
+    title: "Laptop manipulation",
     aspect: 1.3989,
-    rows: [["human", "Human", "human"], ["dexhand021_jaka", "DexHand021", "robot"], ["rh56dfx_ur5", "RH56DFX", "robot"], ["sharpa_iiwa7", "Sharpa", "robot"]]
+    rows: [["human", "Human", "human"], ["allegro", "Allegro", "robot"], ["dexhand021", "DexHand021", "robot"], ["rh56dfx", "RH56DFX", "robot"]]
+  },
+  tongs: {
+    title: "Wooden tongs transfer",
+    aspect: 1.7647,
+    rows: [["human", "Human", "human"], ["inspire", "Inspire", "robot"], ["orcahand", "OrcaHand", "robot"], ["shadow", "Shadow", "robot"]]
   }
 };
 
