@@ -648,22 +648,60 @@ a,
 
 .dataset-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.72fr);
-  align-items: start;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  align-items: stretch;
+  gap: 24px;
+}
+
+.dataset-figure {
+  display: flex;
+  min-width: 0;
+}
+
+.dataset-figure .figure-button {
+  display: grid;
+  height: 100%;
+  border-radius: 6px;
+  place-items: center;
 }
 
 .dataset-ledger {
   display: grid;
-  gap: 9px;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .dataset-ledger article {
-  padding: 13px 15px 14px;
+  --dataset-color: #94acd0;
+  display: flex;
+  min-height: 0;
+  padding: 12px 16px 13px;
+  flex-direction: column;
+  justify-content: center;
   border: 1px solid var(--line);
-  border-left: 3px solid #94acd0;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.68);
+  border-left: 4px solid var(--dataset-color);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.dataset-ledger article:nth-child(1) {
+  --dataset-color: #14958c;
+}
+
+.dataset-ledger article:nth-child(2) {
+  --dataset-color: #8b6bc1;
+}
+
+.dataset-ledger article:nth-child(3) {
+  --dataset-color: #3a8fd7;
+}
+
+.dataset-ledger article:nth-child(4) {
+  --dataset-color: #f58332;
+}
+
+.dataset-ledger article:nth-child(5) {
+  --dataset-color: #efad2f;
 }
 
 .dataset-ledger article > div {
@@ -674,9 +712,21 @@ a,
 }
 
 .dataset-ledger strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--font-sans);
   font-size: 22px;
   font-weight: 650;
+}
+
+.dataset-ledger strong::before {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: var(--dataset-color);
+  content: "";
 }
 
 .dataset-ledger span {
@@ -687,9 +737,10 @@ a,
 }
 
 .dataset-ledger p {
-  margin: 5px 0 0;
+  margin: 4px 0 0 17px;
   color: var(--ink-soft);
   font-size: 16.5px;
+  line-height: 1.35;
 }
 
 .coverage-figure {
@@ -1085,7 +1136,13 @@ td.second {
 
   .dataset-ledger {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: 1fr;
     gap: 9px;
+  }
+
+  .dataset-ledger article:last-child {
+    grid-column: 1 / -1;
   }
 
   .transfer-context {
@@ -1286,6 +1343,10 @@ td.second {
 
   .dataset-ledger {
     grid-template-columns: 1fr;
+  }
+
+  .dataset-ledger article:last-child {
+    grid-column: auto;
   }
 
   .embodiment-grid {
