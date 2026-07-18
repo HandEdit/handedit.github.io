@@ -88,6 +88,8 @@ function renderEmbodiments(group) {
   }).join("");
 }
 
+const transferAssetRevision = "20260718-2";
+
 const transferTasks = {
   cut: {
     title: "Apple cutting",
@@ -102,7 +104,7 @@ const transferTasks = {
   place: {
     title: "Lift and place",
     aspect: 1.7647,
-    rows: [["human", "Human", "human"], ["allegro", "Allegro", "robot"], ["inspire", "Inspire", "robot"], ["sharpa", "Sharpa", "robot"]]
+    rows: [["human", "Human", "human"], ["allegro", "Allegro", "robot"], ["rh56dfx", "RH56DFX", "robot"], ["sharpa", "Sharpa", "robot"]]
   },
   mixer: {
     title: "Mixer manipulation",
@@ -112,12 +114,12 @@ const transferTasks = {
   laptop: {
     title: "Laptop manipulation",
     aspect: 1.3989,
-    rows: [["human", "Human", "human"], ["allegro", "Allegro", "robot"], ["dexhand021", "DexHand021", "robot"], ["rh56dfx", "RH56DFX", "robot"]]
+    rows: [["human", "Human", "human"], ["allegro", "Allegro", "robot"], ["dexhand021", "DexHand021", "robot"], ["ability", "Ability", "robot"]]
   },
   tongs: {
     title: "Wooden tongs transfer",
     aspect: 1.7647,
-    rows: [["human", "Human", "human"], ["inspire", "Inspire", "robot"], ["orcahand", "OrcaHand", "robot"], ["shadow", "Shadow", "robot"]]
+    rows: [["human", "Human", "human"], ["rh56dfx", "RH56DFX", "robot"], ["orcahand", "OrcaHand", "robot"], ["shadow", "Shadow", "robot"]]
   }
 };
 
@@ -135,7 +137,7 @@ function renderTransferGrid(taskKey) {
     const cells = [`<strong class="transfer-row-label ${kind}">${label}</strong>`];
     for (let frame = 1; frame <= 8; frame += 1) {
       const frameName = String(frame).padStart(2, "0");
-      const src = `assets/transfer/${taskKey}/${key}/${frameName}.webp`;
+      const src = `assets/transfer/${taskKey}/${key}/${frameName}.webp?v=${transferAssetRevision}`;
       const alt = `${task.title}: ${label}, synchronized frame ${frame}`;
       cells.push(`<button class="transfer-frame-button" type="button" data-lightbox="${src}" aria-label="Open ${alt}">
         <img src="${src}" width="540" height="${task.aspect > 1.6 ? 306 : 386}" alt="${alt}" decoding="async">

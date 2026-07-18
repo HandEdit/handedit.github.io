@@ -77,8 +77,8 @@
         "kind": "robot"
       },
       {
-        "key": "inspire",
-        "label": "Inspire",
+        "key": "rh56dfx",
+        "label": "RH56DFX",
         "kind": "robot"
       },
       {
@@ -108,22 +108,22 @@
       },
       {
         "key": "dexhand021_jaka",
-        "label": "DexHand021 + Jaka",
+        "label": "DexHand021",
         "kind": "robot"
       },
       {
         "key": "rh56dfx_ur5",
-        "label": "RH56DFX + UR5",
+        "label": "RH56DFX",
         "kind": "robot"
       }
     ],
     "frames": 8
   },
   {
-    "slug": "box",
-    "title": "Box",
-    "fullTitle": "Articulated box",
-    "description": "Approach, contact, opening, and manipulation of an articulated object.",
+    "slug": "laptop",
+    "title": "Laptop",
+    "fullTitle": "Laptop manipulation",
+    "description": "User-selected synchronized frames matched back to the original source videos.",
     "aspectRatio": 1.399,
     "rows": [
       {
@@ -132,18 +132,48 @@
         "kind": "human"
       },
       {
-        "key": "dexhand021_jaka",
-        "label": "DexHand021 + Jaka",
+        "key": "allegro",
+        "label": "Allegro",
         "kind": "robot"
       },
       {
-        "key": "rh56dfx_ur5",
-        "label": "RH56DFX + UR5",
+        "key": "dexhand021",
+        "label": "DexHand021",
         "kind": "robot"
       },
       {
-        "key": "sharpa_iiwa7",
-        "label": "Sharpa + iiwa7",
+        "key": "ability",
+        "label": "Ability",
+        "kind": "robot"
+      }
+    ],
+    "frames": 8
+  },
+  {
+    "slug": "tongs",
+    "title": "Tongs",
+    "fullTitle": "Wooden tongs transfer",
+    "description": "Tool-mediated transfer shown across three dexterous robot embodiments.",
+    "aspectRatio": 1.7647,
+    "rows": [
+      {
+        "key": "human",
+        "label": "Human",
+        "kind": "human"
+      },
+      {
+        "key": "rh56dfx",
+        "label": "RH56DFX",
+        "kind": "robot"
+      },
+      {
+        "key": "orcahand",
+        "label": "OrcaHand",
+        "kind": "robot"
+      },
+      {
+        "key": "shadow",
+        "label": "Shadow",
         "kind": "robot"
       }
     ],
