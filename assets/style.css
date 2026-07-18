@@ -142,16 +142,33 @@ a,
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
   flex: 0 0 auto;
+  gap: 9px;
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 24px;
   font-weight: 700;
+  line-height: 1;
   letter-spacing: -0.035em;
   text-decoration: none;
 }
 
-.brand span {
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(23, 28, 39, 0.12);
+}
+
+.brand-word {
+  color: var(--ink);
+}
+
+.brand-word > span {
   color: var(--accent);
 }
 
