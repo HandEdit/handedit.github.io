@@ -88,38 +88,56 @@ function renderEmbodiments(group) {
   }).join("");
 }
 
-const transferAssetRevision = "20260718-3";
+const transferAssetRevision = "20260726-1";
 
 const transferTasks = {
   cut: {
     title: "Apple cutting",
     aspect: 1.7647,
+    frames: 8,
     rows: [["human", "Human", "human"], ["ability", "Ability", "robot"], ["shadow", "Shadow", "robot"], ["svh", "SVH", "robot"]]
   },
   pour: {
     title: "Pouring and weighing",
     aspect: 1.7647,
+    frames: 8,
     rows: [["human", "Human", "human"], ["ability", "Ability", "robot"], ["allegro", "Allegro", "robot"], ["shadow", "Shadow", "robot"]]
   },
   place: {
     title: "Lift and place",
     aspect: 1.7647,
+    frames: 8,
     rows: [["human", "Human", "human"], ["allegro", "Allegro", "robot"], ["rh56dfx", "RH56DFX", "robot"], ["sharpa", "Sharpa", "robot"]]
   },
   mixer: {
     title: "Mixer manipulation",
     aspect: 1.3989,
+    frames: 8,
     rows: [["human", "Human", "human"], ["ability", "Ability", "robot"], ["dexhand021_jaka", "DexHand021", "robot"], ["rh56dfx_ur5", "RH56DFX", "robot"]]
   },
   laptop: {
     title: "Laptop manipulation",
     aspect: 1.3989,
+    frames: 8,
     rows: [["human", "Human", "human"], ["allegro", "Allegro", "robot"], ["dexhand021", "DexHand021", "robot"], ["ability", "Ability", "robot"]]
   },
   tongs: {
     title: "Wooden tongs transfer",
     aspect: 1.7647,
+    frames: 8,
     rows: [["human", "Human", "human"], ["rh56dfx", "RH56DFX", "robot"], ["rh5dg2", "RH5DG2", "robot"], ["shadow", "Shadow", "robot"]]
+  },
+  chair: {
+    title: "Pink chair repositioning",
+    aspect: 1.7778,
+    frames: 10,
+    rows: [["human", "Human", "human"], ["revo2", "Revo2", "robot"], ["rh56dfx", "RH56DFX", "robot"], ["svh", "SVH", "robot"]]
+  },
+  rearrange: {
+    title: "Multi-object rearrangement",
+    aspect: 1.7778,
+    frames: 8,
+    rows: [["human", "Human", "human"], ["rohand", "RoHand", "robot"], ["shadow", "Shadow", "robot"], ["svh", "SVH", "robot"]]
   }
 };
 
@@ -128,25 +146,29 @@ function renderTransferGrid(taskKey) {
   const grid = document.querySelector("#transfer-grid");
   const title = document.querySelector("#transfer-title");
   const header = ["<span class=\"transfer-corner\" aria-hidden=\"true\"></span>"];
+  const imageHeight = Math.round(540 / task.aspect);
 
-  for (let frame = 1; frame <= 8; frame += 1) {
+  for (let frame = 1; frame <= task.frames; frame += 1) {
     header.push(`<span class="transfer-frame-number">${frame}</span>`);
   }
 
   const rows = task.rows.flatMap(([key, label, kind]) => {
     const cells = [`<strong class="transfer-row-label ${kind}">${label}</strong>`];
-    for (let frame = 1; frame <= 8; frame += 1) {
+    for (let frame = 1; frame <= task.frames; frame += 1) {
       const frameName = String(frame).padStart(2, "0");
       const src = `assets/transfer/${taskKey}/${key}/${frameName}.webp?v=${transferAssetRevision}`;
       const alt = `${task.title}: ${label}, synchronized frame ${frame}`;
       cells.push(`<button class="transfer-frame-button" type="button" data-lightbox="${src}" aria-label="Open ${alt}">
-        <img src="${src}" width="540" height="${task.aspect > 1.6 ? 306 : 386}" alt="${alt}" decoding="async">
+        <img src="${src}" width="540" height="${imageHeight}" alt="${alt}" decoding="async">
       </button>`);
     }
     return cells;
   });
 
   grid.style.setProperty("--frame-aspect", String(task.aspect));
+  grid.style.setProperty("--frame-count", String(task.frames));
+  grid.style.setProperty("--grid-min-width", `${1190 + Math.max(0, task.frames - 8) * 133}px`);
+  grid.style.setProperty("--grid-min-width-mobile", `${1135 + Math.max(0, task.frames - 8) * 126}px`);
   grid.innerHTML = [...header, ...rows].join("");
   title.textContent = task.title;
 }

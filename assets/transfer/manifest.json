@@ -178,5 +178,65 @@
       }
     ],
     "frames": 8
+  },
+  {
+    "slug": "chair",
+    "title": "Chair",
+    "fullTitle": "Pink chair repositioning",
+    "description": "Bimanual chair repositioning across three dexterous robot embodiments.",
+    "aspectRatio": 1.7778,
+    "rows": [
+      {
+        "key": "human",
+        "label": "Human",
+        "kind": "human"
+      },
+      {
+        "key": "revo2",
+        "label": "Revo2",
+        "kind": "robot"
+      },
+      {
+        "key": "rh56dfx",
+        "label": "RH56DFX",
+        "kind": "robot"
+      },
+      {
+        "key": "svh",
+        "label": "SVH",
+        "kind": "robot"
+      }
+    ],
+    "frames": 10
+  },
+  {
+    "slug": "rearrange",
+    "title": "Rearrange",
+    "fullTitle": "Multi-object rearrangement",
+    "description": "Sequential manipulation of multiple tabletop objects across three dexterous robot embodiments.",
+    "aspectRatio": 1.7778,
+    "rows": [
+      {
+        "key": "human",
+        "label": "Human",
+        "kind": "human"
+      },
+      {
+        "key": "rohand",
+        "label": "RoHand",
+        "kind": "robot"
+      },
+      {
+        "key": "shadow",
+        "label": "Shadow",
+        "kind": "robot"
+      },
+      {
+        "key": "svh",
+        "label": "SVH",
+        "kind": "robot"
+      }
+    ],
+    "frames": 8
   }
 ]

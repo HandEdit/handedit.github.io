@@ -235,25 +235,6 @@ a,
   text-align: center;
 }
 
-.venue {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin: 0 0 14px;
-  color: var(--accent-dark);
-  font-size: 15px;
-  font-weight: 750;
-  letter-spacing: 0.055em;
-  text-transform: none;
-}
-
-.venue span {
-  width: 34px;
-  height: 1px;
-  background: #aebbcf;
-}
-
 .hero h1 {
   max-width: 1100px;
   margin: 0 auto;
@@ -513,7 +494,7 @@ a,
 .transfer-tabs {
   display: flex;
   justify-content: center;
-  max-width: 720px;
+  max-width: 960px;
   margin: 0 auto 18px;
   border-bottom: 1px solid var(--line-strong);
 }
@@ -582,10 +563,10 @@ a,
 
 .transfer-grid {
   display: grid;
-  grid-template-columns: 138px repeat(8, minmax(124px, 1fr));
+  grid-template-columns: 138px repeat(var(--frame-count, 8), minmax(124px, 1fr));
   align-items: center;
   gap: 11px 9px;
-  min-width: 1190px;
+  min-width: var(--grid-min-width, 1190px);
   --frame-aspect: 1.7667;
 }
 
@@ -1319,21 +1300,23 @@ td.second {
   }
 
   .transfer-tabs {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    display: flex;
+    justify-content: flex-start;
     width: 100%;
-    overflow: visible;
+    overflow-x: auto;
+    scrollbar-color: #aeb8c7 transparent;
+    scrollbar-width: thin;
   }
 
   .transfer-tab {
-    min-width: 0;
+    min-width: 92px;
     padding-inline: 7px;
     font-size: 15px;
   }
 
   .transfer-grid {
-    grid-template-columns: 112px repeat(8, 118px);
-    min-width: 1135px;
+    grid-template-columns: 112px repeat(var(--frame-count, 8), 118px);
+    min-width: var(--grid-min-width-mobile, 1135px);
     gap: 11px 8px;
   }
 

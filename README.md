@@ -26,7 +26,7 @@ Recommended format: MP4/H.264, 16:9, 1920x1080, web-optimized fast start. If nar
 
 ## Embodiment-transfer keyframes
 
-The transfer matrix uses five strictly curated scenes. Each scene contains one Human row and three synchronized robot rows, with eight frames per row:
+The transfer matrix uses eight strictly curated scenes. Each scene contains one Human row and three synchronized robot rows, with eight or ten synchronized frames per row:
 
 ```text
 assets/transfer/
@@ -34,10 +34,13 @@ assets/transfer/
   pour/
   place/
   mixer/
-  box/
+  laptop/
+  tongs/
+  chair/
+  rearrange/
 ```
 
-Frame files follow `assets/transfer/<task>/<embodiment>/01.webp ... 08.webp`. The accompanying `assets/transfer/manifest.json` records titles, row labels, and aspect ratios.
+Frame files use zero-padded sequential names under `assets/transfer/<task>/<embodiment>/`. The accompanying `assets/transfer/manifest.json` records titles, row labels, frame counts, and aspect ratios.
 
 ## Main files
 
