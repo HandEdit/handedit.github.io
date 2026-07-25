@@ -88,7 +88,7 @@ function renderEmbodiments(group) {
   }).join("");
 }
 
-const transferAssetRevision = "20260726-1";
+const transferAssetRevision = "20260726-2";
 
 const transferTasks = {
   cut: {
@@ -130,7 +130,8 @@ const transferTasks = {
   chair: {
     title: "Pink chair repositioning",
     aspect: 1.7778,
-    frames: 10,
+    frames: 8,
+    frameSource: [2, 3, 5, 6, 7, 8, 9, 10],
     rows: [["human", "Human", "human"], ["revo2", "Revo2", "robot"], ["rh56dfx", "RH56DFX", "robot"], ["svh", "SVH", "robot"]]
   },
   rearrange: {
@@ -147,6 +148,9 @@ function renderTransferGrid(taskKey) {
   const title = document.querySelector("#transfer-title");
   const header = ["<span class=\"transfer-corner\" aria-hidden=\"true\"></span>"];
   const imageHeight = Math.round(540 / task.aspect);
+  const sourceFrames = Array.isArray(task.frameSource) && task.frameSource.length === task.frames
+    ? task.frameSource
+    : Array.from({ length: task.frames }, (_, i) => i + 1);
 
   for (let frame = 1; frame <= task.frames; frame += 1) {
     header.push(`<span class="transfer-frame-number">${frame}</span>`);
@@ -155,7 +159,7 @@ function renderTransferGrid(taskKey) {
   const rows = task.rows.flatMap(([key, label, kind]) => {
     const cells = [`<strong class="transfer-row-label ${kind}">${label}</strong>`];
     for (let frame = 1; frame <= task.frames; frame += 1) {
-      const frameName = String(frame).padStart(2, "0");
+      const frameName = String(sourceFrames[frame - 1]).padStart(2, "0");
       const src = `assets/transfer/${taskKey}/${key}/${frameName}.webp?v=${transferAssetRevision}`;
       const alt = `${task.title}: ${label}, synchronized frame ${frame}`;
       cells.push(`<button class="transfer-frame-button" type="button" data-lightbox="${src}" aria-label="Open ${alt}">
