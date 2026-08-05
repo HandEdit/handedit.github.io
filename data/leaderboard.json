@@ -1,28 +1,28 @@
 {
   "hand-only": [
-    {"model":"GPT-Image-2","access":"API","lpips_roi":0.480,"fid_roi":99.78,"removal":0.951,"struct":0.778,"id":0.850,"interaction":0.702,"vlm":0.661},
-    {"model":"Nano-Banana-2","access":"API","lpips_roi":0.500,"fid_roi":103.92,"removal":0.923,"struct":0.744,"id":0.790,"interaction":0.615,"vlm":0.690},
-    {"model":"GPT-Image-1.5","access":"API","lpips_roi":0.610,"fid_roi":123.16,"removal":0.953,"struct":0.728,"id":0.914,"interaction":0.432,"vlm":0.763},
-    {"model":"Seedream-4.5","access":"API","lpips_roi":0.536,"fid_roi":117.96,"removal":0.929,"struct":0.721,"id":0.756,"interaction":0.606,"vlm":0.567},
-    {"model":"Flux-2-Pro","access":"API","lpips_roi":0.682,"fid_roi":108.43,"removal":0.937,"struct":0.721,"id":0.757,"interaction":0.372,"vlm":0.670},
-    {"model":"Hunyuan-Image-3.0","access":"Local","lpips_roi":0.666,"fid_roi":113.50,"removal":0.931,"struct":0.714,"id":0.849,"interaction":0.385,"vlm":0.660},
-    {"model":"Nano-Banana","access":"API","lpips_roi":0.712,"fid_roi":118.02,"removal":0.921,"struct":0.691,"id":0.751,"interaction":0.325,"vlm":0.429},
-    {"model":"Qwen-Image-Edit-2511","access":"Local","lpips_roi":0.736,"fid_roi":142.14,"removal":0.952,"struct":0.668,"id":0.616,"interaction":0.302,"vlm":0.469},
-    {"model":"Flux-Kontext-Max","access":"API","lpips_roi":0.719,"fid_roi":136.11,"removal":0.950,"struct":0.658,"id":0.744,"interaction":0.270,"vlm":0.359},
-    {"model":"Omnigen2","access":"Local","lpips_roi":0.751,"fid_roi":127.42,"removal":0.902,"struct":0.676,"id":0.526,"interaction":0.262,"vlm":0.468},
-    {"model":"FireRed-Image-Edit-1.1","access":"Local","lpips_roi":0.727,"fid_roi":144.16,"removal":0.950,"struct":0.628,"id":0.888,"interaction":0.289,"vlm":0.288}
+    {"model":"GPT-Image-2","access":"API","lpips_roi":0.482,"fid_roi":99.71,"removal":0.953,"struct":0.780,"id":0.852,"interaction":0.703,"vlm":0.663},
+    {"model":"Nano-Banana-2","access":"API","lpips_roi":0.501,"fid_roi":103.83,"removal":0.925,"struct":0.746,"id":0.792,"interaction":0.617,"vlm":0.692},
+    {"model":"GPT-Image-1.5","access":"API","lpips_roi":0.611,"fid_roi":123.14,"removal":0.955,"struct":0.730,"id":0.915,"interaction":0.435,"vlm":0.765},
+    {"model":"Seedream-4.5","access":"API","lpips_roi":0.537,"fid_roi":117.90,"removal":0.931,"struct":0.723,"id":0.758,"interaction":0.608,"vlm":0.570},
+    {"model":"Flux-2-Pro","access":"API","lpips_roi":0.683,"fid_roi":108.36,"removal":0.939,"struct":0.723,"id":0.759,"interaction":0.375,"vlm":0.672},
+    {"model":"Hunyuan-Image-3.0","access":"Local","lpips_roi":0.667,"fid_roi":113.40,"removal":0.933,"struct":0.716,"id":0.851,"interaction":0.389,"vlm":0.662},
+    {"model":"Nano-Banana","access":"API","lpips_roi":0.713,"fid_roi":117.97,"removal":0.923,"struct":0.693,"id":0.753,"interaction":0.329,"vlm":0.432},
+    {"model":"Qwen-Image-Edit-2511","access":"Local","lpips_roi":0.737,"fid_roi":142.18,"removal":0.954,"struct":0.670,"id":0.619,"interaction":0.306,"vlm":0.472},
+    {"model":"Flux-Kontext-Max","access":"API","lpips_roi":0.720,"fid_roi":136.10,"removal":0.952,"struct":0.660,"id":0.746,"interaction":0.274,"vlm":0.363},
+    {"model":"Omnigen2","access":"Local","lpips_roi":0.752,"fid_roi":127.39,"removal":0.904,"struct":0.678,"id":0.529,"interaction":0.266,"vlm":0.471},
+    {"model":"FireRed-Image-Edit-1.1","access":"Local","lpips_roi":0.728,"fid_roi":144.16,"removal":0.952,"struct":0.630,"id":0.890,"interaction":0.293,"vlm":0.292}
   ],
   "hand-arm": [
-    {"model":"GPT-Image-2","access":"API","lpips_roi":0.512,"fid_roi":146.01,"removal":0.981,"struct":0.777,"id":0.562,"interaction":0.593,"vlm":0.785},
-    {"model":"GPT-Image-1.5","access":"API","lpips_roi":0.590,"fid_roi":152.29,"removal":0.983,"struct":0.742,"id":0.605,"interaction":0.420,"vlm":0.854},
-    {"model":"Nano-Banana-2","access":"API","lpips_roi":0.513,"fid_roi":158.08,"removal":0.967,"struct":0.725,"id":0.502,"interaction":0.632,"vlm":0.671},
-    {"model":"Flux-2-Pro","access":"API","lpips_roi":0.553,"fid_roi":157.05,"removal":0.958,"struct":0.741,"id":0.515,"interaction":0.540,"vlm":0.702},
-    {"model":"Hunyuan-Image-3.0","access":"Local","lpips_roi":0.668,"fid_roi":161.27,"removal":0.976,"struct":0.742,"id":0.518,"interaction":0.336,"vlm":0.811},
-    {"model":"Qwen-Image-Edit-2511","access":"Local","lpips_roi":0.598,"fid_roi":165.68,"removal":0.980,"struct":0.741,"id":0.467,"interaction":0.488,"vlm":0.703},
-    {"model":"Seedream-4.5","access":"API","lpips_roi":0.622,"fid_roi":167.11,"removal":0.963,"struct":0.700,"id":0.501,"interaction":0.423,"vlm":0.528},
-    {"model":"Nano-Banana","access":"API","lpips_roi":0.699,"fid_roi":164.00,"removal":0.977,"struct":0.704,"id":0.470,"interaction":0.275,"vlm":0.806},
-    {"model":"FireRed-Image-Edit-1.1","access":"Local","lpips_roi":0.702,"fid_roi":189.97,"removal":0.981,"struct":0.705,"id":0.509,"interaction":0.270,"vlm":0.397},
-    {"model":"Omnigen2","access":"Local","lpips_roi":0.740,"fid_roi":178.50,"removal":0.910,"struct":0.705,"id":0.416,"interaction":0.237,"vlm":0.377},
-    {"model":"Flux-Kontext-Max","access":"API","lpips_roi":0.726,"fid_roi":199.39,"removal":0.981,"struct":0.677,"id":0.469,"interaction":0.246,"vlm":0.348}
+    {"model":"GPT-Image-2","access":"API","lpips_roi":0.514,"fid_roi":146.07,"removal":0.983,"struct":0.778,"id":0.563,"interaction":0.595,"vlm":0.786},
+    {"model":"GPT-Image-1.5","access":"API","lpips_roi":0.592,"fid_roi":152.34,"removal":0.985,"struct":0.744,"id":0.606,"interaction":0.421,"vlm":0.856},
+    {"model":"Nano-Banana-2","access":"API","lpips_roi":0.515,"fid_roi":158.15,"removal":0.968,"struct":0.726,"id":0.503,"interaction":0.634,"vlm":0.673},
+    {"model":"Flux-2-Pro","access":"API","lpips_roi":0.555,"fid_roi":157.08,"removal":0.960,"struct":0.743,"id":0.516,"interaction":0.541,"vlm":0.704},
+    {"model":"Hunyuan-Image-3.0","access":"Local","lpips_roi":0.669,"fid_roi":161.39,"removal":0.977,"struct":0.744,"id":0.519,"interaction":0.336,"vlm":0.812},
+    {"model":"Qwen-Image-Edit-2511","access":"Local","lpips_roi":0.599,"fid_roi":165.79,"removal":0.982,"struct":0.743,"id":0.468,"interaction":0.489,"vlm":0.705},
+    {"model":"Seedream-4.5","access":"API","lpips_roi":0.624,"fid_roi":167.19,"removal":0.965,"struct":0.702,"id":0.502,"interaction":0.424,"vlm":0.530},
+    {"model":"Nano-Banana","access":"API","lpips_roi":0.700,"fid_roi":164.08,"removal":0.978,"struct":0.706,"id":0.471,"interaction":0.275,"vlm":0.808},
+    {"model":"FireRed-Image-Edit-1.1","access":"Local","lpips_roi":0.703,"fid_roi":190.08,"removal":0.983,"struct":0.707,"id":0.510,"interaction":0.270,"vlm":0.400},
+    {"model":"Omnigen2","access":"Local","lpips_roi":0.741,"fid_roi":178.56,"removal":0.912,"struct":0.707,"id":0.417,"interaction":0.236,"vlm":0.380},
+    {"model":"Flux-Kontext-Max","access":"API","lpips_roi":0.727,"fid_roi":199.52,"removal":0.983,"struct":0.679,"id":0.470,"interaction":0.246,"vlm":0.351}
   ]
 }
