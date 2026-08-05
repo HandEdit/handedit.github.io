@@ -1,31 +1,4 @@
-const leaderboard = {
-  "hand-only": [
-    ["GPT-Image-2", "API", 0.480, 99.78, 0.951, 0.778, 0.850, 0.702, 0.661],
-    ["Nano-Banana-2", "API", 0.500, 103.92, 0.923, 0.744, 0.790, 0.615, 0.690],
-    ["GPT-Image-1.5", "API", 0.610, 123.16, 0.953, 0.728, 0.914, 0.432, 0.763],
-    ["Seedream-4.5", "API", 0.536, 117.96, 0.929, 0.721, 0.756, 0.606, 0.567],
-    ["Flux-2-Pro", "API", 0.682, 108.43, 0.937, 0.721, 0.757, 0.372, 0.670],
-    ["Hunyuan-Image-3.0", "Local", 0.666, 113.50, 0.931, 0.714, 0.849, 0.385, 0.660],
-    ["Nano-Banana", "API", 0.712, 118.02, 0.921, 0.691, 0.751, 0.325, 0.429],
-    ["Qwen-Image-Edit-2511", "Local", 0.736, 142.14, 0.952, 0.668, 0.616, 0.302, 0.469],
-    ["Flux-Kontext-Max", "API", 0.719, 136.11, 0.950, 0.658, 0.744, 0.270, 0.359],
-    ["OmniGen2", "Local", 0.751, 127.42, 0.902, 0.676, 0.526, 0.262, 0.468],
-    ["FireRed-Image-Edit-1.1", "Local", 0.727, 144.16, 0.950, 0.628, 0.888, 0.289, 0.288]
-  ],
-  "hand-arm": [
-    ["GPT-Image-2", "API", 0.512, 146.01, 0.981, 0.777, 0.562, 0.593, 0.785],
-    ["GPT-Image-1.5", "API", 0.590, 152.29, 0.983, 0.742, 0.605, 0.420, 0.854],
-    ["Nano-Banana-2", "API", 0.513, 158.08, 0.967, 0.725, 0.502, 0.632, 0.671],
-    ["Flux-2-Pro", "API", 0.553, 157.05, 0.958, 0.741, 0.515, 0.540, 0.702],
-    ["Hunyuan-Image-3.0", "Local", 0.668, 161.27, 0.976, 0.742, 0.518, 0.336, 0.811],
-    ["Qwen-Image-Edit-2511", "Local", 0.598, 165.68, 0.980, 0.741, 0.467, 0.488, 0.703],
-    ["Seedream-4.5", "API", 0.622, 167.11, 0.963, 0.700, 0.501, 0.423, 0.528],
-    ["Nano-Banana", "API", 0.699, 164.00, 0.977, 0.704, 0.470, 0.275, 0.806],
-    ["FireRed-Image-Edit-1.1", "Local", 0.702, 189.97, 0.981, 0.705, 0.509, 0.270, 0.397],
-    ["OmniGen2", "Local", 0.740, 178.50, 0.910, 0.705, 0.416, 0.237, 0.377],
-    ["Flux-Kontext-Max", "API", 0.726, 199.39, 0.981, 0.677, 0.469, 0.246, 0.348]
-  ]
-};
+const leaderboard = { "hand-only": [], "hand-arm": [] };
 
 const metricSpecs = [
   { idx: 2, direction: "min", digits: 3 },
@@ -36,6 +9,38 @@ const metricSpecs = [
   { idx: 7, direction: "max", digits: 3 },
   { idx: 8, direction: "max", digits: 3 }
 ];
+
+function normalizeLeaderboardRows(rows) {
+  return rows.map((row) => [
+    row.model,
+    row.access,
+    row.lpips_roi,
+    row.fid_roi,
+    row.removal,
+    row.struct,
+    row.id,
+    row.interaction,
+    row.vlm
+  ]);
+}
+
+async function loadLeaderboard() {
+  const body = document.querySelector("#leaderboard-table tbody");
+  try {
+    const response = await fetch("data/leaderboard.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const data = await response.json();
+    leaderboard["hand-only"] = normalizeLeaderboardRows(data["hand-only"]);
+    leaderboard["hand-arm"] = normalizeLeaderboardRows(data["hand-arm"]);
+
+    const activeTrack = document.querySelector(".leaderboard-tab.active")?.dataset.track || "hand-only";
+    renderLeaderboard(activeTrack);
+  } catch (error) {
+    console.error("Unable to load leaderboard data:", error);
+    body.innerHTML = '<tr><td colspan="9">Leaderboard data could not be loaded.</td></tr>';
+  }
+}
 
 function rankValues(rows, spec) {
   const values = [...new Set(rows.map((row) => row[spec.idx]))]
@@ -231,7 +236,6 @@ initializeTabGroup({
   onSelect: renderEmbodiments
 });
 
-renderLeaderboard("hand-only");
 const leaderboardPanel = document.querySelector(".table-frame");
 leaderboardPanel.id = "leaderboard-panel";
 initializeTabGroup({
@@ -240,6 +244,7 @@ initializeTabGroup({
   dataAttribute: "track",
   onSelect: renderLeaderboard
 });
+loadLeaderboard();
 
 // Teaser video: keep the supplied poster and play treatment while retaining native controls.
 const teaserPlayer = document.querySelector("#teaser-player");
